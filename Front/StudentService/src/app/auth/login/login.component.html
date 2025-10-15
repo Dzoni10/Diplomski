@@ -1,0 +1,25 @@
+<form [formGroup]="loginForm" (ngSubmit)="login()">
+  <div class="form-container" @slideIn>
+    
+    <mat-form-field>
+      <mat-label>Email</mat-label>
+      <input matInput formControlName="email" type="email"/>
+      <mat-error *ngIf="hasError('email')">{{ getErrorMessage('email') }}</mat-error>
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>Lozinka</mat-label>
+      <input matInput formControlName="password" type="password"/>
+      <mat-error *ngIf="hasError('password')">{{ getErrorMessage('password') }}</mat-error>
+    </mat-form-field>
+
+    <div class="captcha" id="recaptcha-container"></div>
+
+    <button class="btnLogin" color="primary" type="submit" mat-raised-button [disabled]="loginForm.invalid || !recaptchaToken">
+      Logovanje
+    </button>
+    
+    <p>Nemaš nalog? <a href="/signup">Registracija</a></p>
+    <p><a href="/recovery">Zaboravljena lozinka ?</a></p>
+  </div>
+</form>

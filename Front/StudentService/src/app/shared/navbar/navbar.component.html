@@ -1,0 +1,8 @@
+<div id="nav-bar"> 
+    <div class="navbar-title">Studentska služba</div>
+
+    <div class="navbar-buttons">
+        <button mat-raised-button *ngIf="!isLoggedIn()" class="login-button" [routerLink]="['login']">Prijava</button>
+        <button mat-raised-button *ngIf="isLoggedIn()" class="logout-button" [routerLink]="['login']" (click)="logout()">Odjava</button>
+    </div>
+</div>
