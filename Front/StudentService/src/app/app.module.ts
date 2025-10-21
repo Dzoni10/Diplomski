@@ -12,6 +12,9 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatCardModule } from '@angular/material/card';
 import { AuthModule } from './auth/auth.module';
+import { MatIconModule } from '@angular/material/icon';
+import { MatTableModule } from '@angular/material/table';
+import { StudentModule } from './student/student.module';
 
 @NgModule({
   declarations: [
@@ -28,7 +31,10 @@ import { AuthModule } from './auth/auth.module';
     BrowserAnimationsModule,
     ReactiveFormsModule,
     MatCardModule,
-    AuthModule
+    AuthModule,
+    MatIconModule,
+    MatTableModule,
+    StudentModule
   ],
   providers: [
     {provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi:true}

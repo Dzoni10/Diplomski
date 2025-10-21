@@ -58,9 +58,9 @@ export class SignupComponent implements OnInit {
       password2: ['', Validators.required],
       index: ['', [
         Validators.required,
-        Validators.minLength(11),
+        Validators.minLength(9),
         Validators.maxLength(11),
-        Validators.pattern(/^[A-Z0-9]{2}-(?:[1-9]|[1-9][0-9]|1[0-9]{2}|2[0-3][0-9]|240)-20\d{2}$/)
+        Validators.pattern(/^(?:[A-Z]{2}|[A-Z][0-9])-(?:[1-9]|[1-9][0-9]|1[0-9]{2}|2[0-3][0-9]|240)-20(1[1-9]|[2-9][0-9])$/)
       ]]
     }, {
       validators: this.passwordMatchValidator

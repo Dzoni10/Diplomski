@@ -1,4 +1,7 @@
 package com.example.studentservice.domain;
 
-public class Purpose {
+public enum Purpose {
+
+    VERIFICATION,
+    RESET
 }

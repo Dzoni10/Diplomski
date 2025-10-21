@@ -1,4 +1,8 @@
 package com.example.studentservice.domain;
 
-public class Role {
+public enum Role {
+    PROFESSOR,
+    STUDENT,
+    ADMINFAKS,
+    ADMINSCNS
 }

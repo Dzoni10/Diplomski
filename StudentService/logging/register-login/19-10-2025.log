@@ -1,0 +1,181 @@
+{
+  "timestamp" : "2025-10-18T23:23:28.085Z",
+  "eventType" : "SIGNUP_SUCCESS",
+  "category" : "AUTHENTICATION",
+  "eventId" : "1760829808085-42",
+  "user" : "nikola.milivojevic.555@gmail.com",
+  "role" : "STUDENT",
+  "result" : "SUCCESS",
+  "message" : "User created successfully, verification email sent",
+  "ipAddress" : "0:0:0:0:0:0:0:1",
+  "userAgent" : "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36"
+}
+
+{
+  "timestamp" : "2025-10-18T23:23:46.637Z",
+  "eventType" : "LOGIN_FAILED",
+  "category" : "AUTHENTICATION",
+  "eventId" : "1760829826637-947",
+  "user" : "nikola.milivojevic.555@gmail.com",
+  "role" : "STUDENT",
+  "result" : "FAILURE",
+  "message" : "Email not verified",
+  "ipAddress" : "0:0:0:0:0:0:0:1",
+  "userAgent" : "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36"
+}
+
+{
+  "timestamp" : "2025-10-18T23:24:03.975Z",
+  "eventType" : "VERIFICATION_SUCCESS",
+  "category" : "AUTHENTICATION",
+  "eventId" : "1760829843975-667",
+  "user" : "nikola.milivojevic.555@gmail.com",
+  "role" : "STUDENT",
+  "result" : "SUCCESS",
+  "message" : "Account successfully verified",
+  "ipAddress" : "0:0:0:0:0:0:0:1",
+  "userAgent" : null
+}
+
+{
+  "timestamp" : "2025-10-18T23:24:40.616Z",
+  "eventType" : "VERIFICATION_FAILED",
+  "category" : "AUTHENTICATION",
+  "eventId" : "1760829880616-284",
+  "user" : "nikola.milivojevic.555@gmail.com",
+  "role" : "STUDENT",
+  "result" : "FAILURE",
+  "message" : "Token already used",
+  "ipAddress" : "0:0:0:0:0:0:0:1",
+  "userAgent" : null
+}
+
+{
+  "timestamp" : "2025-10-18T23:25:25.702Z",
+  "eventType" : "LOGIN_SUCCESS",
+  "category" : "AUTHENTICATION",
+  "eventId" : "1760829925702-912",
+  "user" : "nikola.milivojevic.555@gmail.com",
+  "role" : "STUDENT",
+  "result" : "SUCCESS",
+  "message" : "User logged in successfully",
+  "ipAddress" : "0:0:0:0:0:0:0:1",
+  "userAgent" : "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36"
+}
+
+{
+  "timestamp" : "2025-10-19T01:18:06.057Z",
+  "eventType" : "SIGNUP_ERROR",
+  "category" : "AUTHENTICATION",
+  "eventId" : "1760836686057-963",
+  "user" : "nikola.milivojevic.555@gmail.com",
+  "role" : "STUDENT",
+  "result" : "ERROR",
+  "message" : "Failed to send verification email: could not execute statement [ERROR: null value in column \"index\" of relation \"student_table\" violates not-null constraint\n  Detail: Failing row contains (0, f, null, 0, 1, 3).] [/* insert for com.example.studentservice.domain.Student */insert into student_table (average_grade,budget,index,money,year,id) values (?,?,?,?,?,?)]; SQL [/* insert for com.example.studentservice.domain.Student */insert into student_table (average_grade,budget,index,money,year,id) values (?,?,?,?,?,?)]; constraint [index\" of relation \"student_table]",
+  "ipAddress" : "0:0:0:0:0:0:0:1",
+  "userAgent" : "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36"
+}
+
+{
+  "timestamp" : "2025-10-19T01:20:55.969Z",
+  "eventType" : "SIGNUP_ERROR",
+  "category" : "AUTHENTICATION",
+  "eventId" : "1760836855969-627",
+  "user" : "nikola.milivojevic.555@gmail.com",
+  "role" : "STUDENT",
+  "result" : "ERROR",
+  "message" : "Failed to send verification email: could not execute statement [ERROR: null value in column \"index\" of relation \"student_table\" violates not-null constraint\n  Detail: Failing row contains (0, f, null, 0, 1, 4).] [/* insert for com.example.studentservice.domain.Student */insert into student_table (average_grade,budget,index,money,year,id) values (?,?,?,?,?,?)]; SQL [/* insert for com.example.studentservice.domain.Student */insert into student_table (average_grade,budget,index,money,year,id) values (?,?,?,?,?,?)]; constraint [index\" of relation \"student_table]",
+  "ipAddress" : "0:0:0:0:0:0:0:1",
+  "userAgent" : "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36"
+}
+
+{
+  "timestamp" : "2025-10-19T01:22:26.376Z",
+  "eventType" : "SIGNUP_ERROR",
+  "category" : "AUTHENTICATION",
+  "eventId" : "1760836946376-243",
+  "user" : "nikola.milivojevic.555@gmail.com",
+  "role" : "STUDENT",
+  "result" : "ERROR",
+  "message" : "Failed to send verification email: could not execute statement [ERROR: null value in column \"index\" of relation \"student_table\" violates not-null constraint\n  Detail: Failing row contains (0, f, null, 0, 1, 5).] [/* insert for com.example.studentservice.domain.Student */insert into student_table (average_grade,budget,index,money,year,id) values (?,?,?,?,?,?)]; SQL [/* insert for com.example.studentservice.domain.Student */insert into student_table (average_grade,budget,index,money,year,id) values (?,?,?,?,?,?)]; constraint [index\" of relation \"student_table]",
+  "ipAddress" : "0:0:0:0:0:0:0:1",
+  "userAgent" : "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36"
+}
+
+{
+  "timestamp" : "2025-10-19T01:23:23.967Z",
+  "eventType" : "SIGNUP_SUCCESS",
+  "category" : "AUTHENTICATION",
+  "eventId" : "1760837003967-122",
+  "user" : "nikola.milivojevic.555@gmail.com",
+  "role" : "STUDENT",
+  "result" : "SUCCESS",
+  "message" : "User created successfully, verification email sent",
+  "ipAddress" : "0:0:0:0:0:0:0:1",
+  "userAgent" : "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36"
+}
+
+{
+  "timestamp" : "2025-10-19T01:29:52.088Z",
+  "eventType" : "SIGNUP_SUCCESS",
+  "category" : "AUTHENTICATION",
+  "eventId" : "1760837392088-253",
+  "user" : "nikola.milivojevic.555@gmail.com",
+  "role" : "STUDENT",
+  "result" : "SUCCESS",
+  "message" : "User created successfully, verification email sent",
+  "ipAddress" : "0:0:0:0:0:0:0:1",
+  "userAgent" : "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36"
+}
+
+{
+  "timestamp" : "2025-10-19T01:30:11.764Z",
+  "eventType" : "LOGIN_FAILED",
+  "category" : "AUTHENTICATION",
+  "eventId" : "1760837411764-631",
+  "user" : "nikola.milivojevic.555@gmail.com",
+  "role" : "STUDENT",
+  "result" : "FAILURE",
+  "message" : "Email not verified",
+  "ipAddress" : "0:0:0:0:0:0:0:1",
+  "userAgent" : "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36"
+}
+
+{
+  "timestamp" : "2025-10-19T01:30:32.022Z",
+  "eventType" : "VERIFICATION_SUCCESS",
+  "category" : "AUTHENTICATION",
+  "eventId" : "1760837432022-95",
+  "user" : "nikola.milivojevic.555@gmail.com",
+  "role" : "STUDENT",
+  "result" : "SUCCESS",
+  "message" : "Account successfully verified",
+  "ipAddress" : "0:0:0:0:0:0:0:1",
+  "userAgent" : null
+}
+
+{
+  "timestamp" : "2025-10-19T01:30:34.963Z",
+  "eventType" : "VERIFICATION_FAILED",
+  "category" : "AUTHENTICATION",
+  "eventId" : "1760837434963-831",
+  "user" : "nikola.milivojevic.555@gmail.com",
+  "role" : "STUDENT",
+  "result" : "FAILURE",
+  "message" : "Token already used",
+  "ipAddress" : "0:0:0:0:0:0:0:1",
+  "userAgent" : null
+}
+
+{
+  "timestamp" : "2025-10-19T01:30:41.628Z",
+  "eventType" : "LOGIN_SUCCESS",
+  "category" : "AUTHENTICATION",
+  "eventId" : "1760837441628-76",
+  "user" : "nikola.milivojevic.555@gmail.com",
+  "role" : "STUDENT",
+  "result" : "SUCCESS",
+  "message" : "User logged in successfully",
+  "ipAddress" : "0:0:0:0:0:0:0:1",
+  "userAgent" : "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36"
+}

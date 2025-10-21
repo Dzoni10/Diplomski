@@ -44,4 +44,12 @@ export class NavbarComponent implements OnInit {
     return this.user?.role==='STUDENT';
   }
 
+  isLoggedSCNSAdmin(): boolean{
+    return this.user?.role==='ADMINSCNS';
+  }
+
+  isLoggedFAKSAdmin(): boolean{
+    return this.user?.role==='ADMINFAKS';
+  }
+
 }

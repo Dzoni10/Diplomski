@@ -1,0 +1,71 @@
+<div class="table-container mat-elevation-z4">
+  <h2>Lista studenata - Dom</h2>
+
+  <table mat-table [dataSource]="dataSource" class="mat-table">
+
+    <!-- Ime -->
+    <ng-container matColumnDef="name">
+      <th mat-header-cell *matHeaderCellDef> Ime </th>
+      <td mat-cell *matCellDef="let s"> {{ s.name }} </td>
+    </ng-container>
+
+    <!-- Prezime -->
+    <ng-container matColumnDef="surname">
+      <th mat-header-cell *matHeaderCellDef> Prezime </th>
+      <td mat-cell *matCellDef="let s"> {{ s.surname }} </td>
+    </ng-container>
+
+    <!-- Index -->
+    <ng-container matColumnDef="index">
+      <th mat-header-cell *matHeaderCellDef> Indeks </th>
+      <td mat-cell *matCellDef="let s"> {{ s.index }} </td>
+    </ng-container>
+
+    <!-- Email -->
+    <ng-container matColumnDef="email">
+      <th mat-header-cell *matHeaderCellDef> E-mail </th>
+      <td mat-cell *matCellDef="let s"> {{ s.email }} </td>
+    </ng-container>
+
+    <!-- Godina -->
+    <ng-container matColumnDef="year">
+      <th mat-header-cell *matHeaderCellDef> Godina </th>
+      <td mat-cell *matCellDef="let s"> {{ s.year }} </td>
+    </ng-container>
+
+    <!-- Budžet -->
+    <ng-container matColumnDef="budget">
+      <th mat-header-cell *matHeaderCellDef> Budžet </th>
+      <td mat-cell *matCellDef="let s">
+        <mat-icon color="primary" *ngIf="s.budget">check_circle</mat-icon>
+        <mat-icon color="warn" *ngIf="!s.budget">cancel</mat-icon>
+      </td>
+    </ng-container>
+
+    <!-- Prosečna ocena -->
+    <ng-container matColumnDef="averageGrade">
+      <th mat-header-cell *matHeaderCellDef> Prosečna ocena </th>
+      <td mat-cell *matCellDef="let s"> {{ s.averageGrade | number:'1.2-2' }} </td>
+    </ng-container>
+
+    <!-- Status doma -->
+    <ng-container matColumnDef="dormitoryStatus">
+      <th mat-header-cell *matHeaderCellDef> Status doma </th>
+      <td mat-cell *matCellDef="let s">
+        <span class="status" [ngClass]="s.dormitoryStatus.toLowerCase()">{{ convertStatus(s.dormitoryStatus) }}</span>
+      </td>
+    </ng-container>
+
+    <!-- Akcije -->
+    <ng-container matColumnDef="actions">
+      <th mat-header-cell *matHeaderCellDef> Opcije </th>
+      <td mat-cell *matCellDef="let s">
+        <button *ngIf="s.dormitoryStatus==='NOT_DORMITED'|| s.dormitoryStatus==='COMPETED'" mat-raised-button color="primary" (click)="changeStatus(s, 'ACCEPTED')">Prihvati</button>
+        <button *ngIf="s.dormitoryStatus==='NOT_DORMITED'|| s.dormitoryStatus==='COMPETED'" mat-raised-button color="warn" (click)="changeStatus(s, 'REJECTED')">Odbij</button>
+      </td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  </table>
+</div>

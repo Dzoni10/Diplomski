@@ -1,4 +1,8 @@
 package com.example.studentservice.repositoryInterfaces;
 
-public class VerificationTokenRepositoryInterface {
+import com.example.studentservice.domain.VerificationToken;
+import org.springframework.data.jpa.repository.JpaRepository;
+
+public interface VerificationTokenRepositoryInterface extends JpaRepository<VerificationToken,Integer> {
+    public VerificationToken findByToken(String token);
 }
