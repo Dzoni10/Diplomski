@@ -79,7 +79,8 @@ public class JwtAuthenticationFilter extends OncePerRequestFilter {
                 sessionRegistry.updateLastActivity(sessionId);
 
                 UsernamePasswordAuthenticationToken authentication =
-                        new UsernamePasswordAuthenticationToken(userId, null, authorities);
+                        new UsernamePasswordAuthenticationToken(
+                                userId, null, authorities);
 
                 // Dodaj detalje zahteva
                 authentication.setDetails(new WebAuthenticationDetailsSource().buildDetails(request));

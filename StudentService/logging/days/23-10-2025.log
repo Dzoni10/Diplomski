@@ -1,0 +1,168 @@
+{
+  "timestamp" : "2025-10-23T16:30:55.961Z",
+  "eventType" : "LOGIN_SUCCESS",
+  "category" : "AUTHENTICATION",
+  "eventId" : "1761237055961-606",
+  "user" : "scns@gmail.com",
+  "role" : "ADMINSCNS",
+  "result" : "SUCCESS",
+  "message" : "User logged in successfully",
+  "ipAddress" : "0:0:0:0:0:0:0:1",
+  "userAgent" : "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36"
+}
+
+{
+  "timestamp" : "2025-10-23T16:31:59.808Z",
+  "eventType" : "LOGIN_FAILED",
+  "category" : "AUTHENTICATION",
+  "eventId" : "1761237119808-989",
+  "user" : "nikola.milivojevic.555@gmail.com",
+  "role" : "STUDENT",
+  "result" : "FAILURE",
+  "message" : "Wrong password",
+  "ipAddress" : "0:0:0:0:0:0:0:1",
+  "userAgent" : "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36"
+}
+
+{
+  "timestamp" : "2025-10-23T16:32:04.623Z",
+  "eventType" : "LOGIN_SUCCESS",
+  "category" : "AUTHENTICATION",
+  "eventId" : "1761237124623-928",
+  "user" : "nikola.milivojevic.555@gmail.com",
+  "role" : "STUDENT",
+  "result" : "SUCCESS",
+  "message" : "User logged in successfully",
+  "ipAddress" : "0:0:0:0:0:0:0:1",
+  "userAgent" : "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36"
+}
+
+{
+  "timestamp" : "2025-10-23T16:34:30.696Z",
+  "eventType" : "LOGIN_SUCCESS",
+  "category" : "AUTHENTICATION",
+  "eventId" : "1761237270696-82",
+  "user" : "nikola.milivojevic.555@gmail.com",
+  "role" : "STUDENT",
+  "result" : "SUCCESS",
+  "message" : "User logged in successfully",
+  "ipAddress" : "0:0:0:0:0:0:0:1",
+  "userAgent" : "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36"
+}
+
+{
+  "timestamp" : "2025-10-23T16:36:31.866Z",
+  "eventType" : "LOGIN_SUCCESS",
+  "category" : "AUTHENTICATION",
+  "eventId" : "1761237391866-116",
+  "user" : "nikola.milivojevic.555@gmail.com",
+  "role" : "STUDENT",
+  "result" : "SUCCESS",
+  "message" : "User logged in successfully",
+  "ipAddress" : "0:0:0:0:0:0:0:1",
+  "userAgent" : "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36"
+}
+
+{
+  "timestamp" : "2025-10-23T17:39:03.093Z",
+  "eventType" : "LOGIN_SUCCESS",
+  "category" : "AUTHENTICATION",
+  "eventId" : "1761241143094-602",
+  "user" : "nikola.milivojevic.555@gmail.com",
+  "role" : "STUDENT",
+  "result" : "SUCCESS",
+  "message" : "User logged in successfully",
+  "ipAddress" : "0:0:0:0:0:0:0:1",
+  "userAgent" : "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36"
+}
+
+{
+  "timestamp" : "2025-10-23T18:33:30.576Z",
+  "eventType" : "LOGIN_SUCCESS",
+  "category" : "AUTHENTICATION",
+  "eventId" : "1761244410576-469",
+  "user" : "nikola.milivojevic.555@gmail.com",
+  "role" : "STUDENT",
+  "result" : "SUCCESS",
+  "message" : "User logged in successfully",
+  "ipAddress" : "0:0:0:0:0:0:0:1",
+  "userAgent" : "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36"
+}
+
+{
+  "timestamp" : "2025-10-23T18:42:23.643Z",
+  "eventType" : "LOGIN_SUCCESS",
+  "category" : "AUTHENTICATION",
+  "eventId" : "1761244943643-817",
+  "user" : "scns@gmail.com",
+  "role" : "ADMINSCNS",
+  "result" : "SUCCESS",
+  "message" : "User logged in successfully",
+  "ipAddress" : "0:0:0:0:0:0:0:1",
+  "userAgent" : "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36"
+}
+
+{
+  "timestamp" : "2025-10-23T18:42:51.555Z",
+  "eventType" : "LOGIN_SUCCESS",
+  "category" : "AUTHENTICATION",
+  "eventId" : "1761244971555-707",
+  "user" : "nikola.milivojevic.555@gmail.com",
+  "role" : "STUDENT",
+  "result" : "SUCCESS",
+  "message" : "User logged in successfully",
+  "ipAddress" : "0:0:0:0:0:0:0:1",
+  "userAgent" : "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36"
+}
+
+{
+  "timestamp" : "2025-10-23T18:57:42.179Z",
+  "eventType" : "LOGIN_FAILED",
+  "category" : "AUTHENTICATION",
+  "eventId" : "1761245862179-998",
+  "user" : "nikola.milivojevic.555@gmail.com",
+  "role" : "STUDENT",
+  "result" : "FAILURE",
+  "message" : "Wrong password",
+  "ipAddress" : "0:0:0:0:0:0:0:1",
+  "userAgent" : "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36"
+}
+
+{
+  "timestamp" : "2025-10-23T18:57:49.369Z",
+  "eventType" : "LOGIN_SUCCESS",
+  "category" : "AUTHENTICATION",
+  "eventId" : "1761245869369-892",
+  "user" : "nikola.milivojevic.555@gmail.com",
+  "role" : "STUDENT",
+  "result" : "SUCCESS",
+  "message" : "User logged in successfully",
+  "ipAddress" : "0:0:0:0:0:0:0:1",
+  "userAgent" : "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36"
+}
+
+{
+  "timestamp" : "2025-10-23T19:04:07.685Z",
+  "eventType" : "LOGIN_SUCCESS",
+  "category" : "AUTHENTICATION",
+  "eventId" : "1761246247685-253",
+  "user" : "nikola.milivojevic.555@gmail.com",
+  "role" : "STUDENT",
+  "result" : "SUCCESS",
+  "message" : "User logged in successfully",
+  "ipAddress" : "0:0:0:0:0:0:0:1",
+  "userAgent" : "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36"
+}
+
+{
+  "timestamp" : "2025-10-23T19:25:47.533Z",
+  "eventType" : "LOGIN_SUCCESS",
+  "category" : "AUTHENTICATION",
+  "eventId" : "1761247547533-385",
+  "user" : "scns@gmail.com",
+  "role" : "ADMINSCNS",
+  "result" : "SUCCESS",
+  "message" : "User logged in successfully",
+  "ipAddress" : "0:0:0:0:0:0:0:1",
+  "userAgent" : "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36"
+}

@@ -1,9 +1,10 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
+import { Observable, Subject } from 'rxjs';
 import { StudentDormitory } from './model/StudentDormitory.model';
 import { AuthService } from '../auth/auth.service';
-
+import { SubjectFaculty } from '../subject/model/SubjectFaculty.model';
+import { StudentProfile } from './model/StudentProfile.model';
 @Injectable({
   providedIn: 'root'
 })
@@ -19,6 +20,14 @@ export class StudentService {
 
 changeDormitoryAccess(change: StudentDormitory): Observable<any> {
   return this.http.put(`${this.apiUrl}/changeStatus`,change,{headers:this.getAuthHeaders()});
+}
+
+getUnpassedSubjects(email: string): Observable<SubjectFaculty[]> {
+  return this.http.get<SubjectFaculty[]>(`${this.apiUrl}/unpassed/${email}`,{headers:this.getAuthHeaders()});
+}
+
+getStudentProfile(email: string): Observable<StudentProfile> {
+  return this.http.get<StudentProfile>(`${this.apiUrl}/profile/${email}`);
 }
 
 private getAuthHeaders(): HttpHeaders {

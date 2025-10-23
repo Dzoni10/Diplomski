@@ -3,6 +3,7 @@
 
     <div class="navbar-buttons">
         <button mat-raised-button *ngIf="isLoggedIn()&&isLoggedSCNSAdmin()" class="login-button" [routerLink]="['student-dormitory-access']">Useljenje studenata</button>
+        <button mat-raised-button *ngIf="isLoggedIn()&&isLoggedStudent()" class="login-button" [routerLink]="['student-profile']">Profil</button>
         <button mat-raised-button *ngIf="isLoggedIn()&&isLoggedStudent()" class="login-button" [routerLink]="['']">Finansijska kartica</button>
         <button mat-raised-button *ngIf="isLoggedIn()&&isLoggedStudent()" class="login-button" [routerLink]="['']">Menza</button>
         <button mat-raised-button *ngIf="isLoggedIn()&&isLoggedStudent()" class="login-button" [routerLink]="['']">Studentski dom</button>

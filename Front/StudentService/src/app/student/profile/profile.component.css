@@ -1,0 +1,41 @@
+.profile-container {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  padding: 20px;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+mat-card {
+  border-radius: 16px;
+}
+
+.profile-card mat-card-header {
+  background-color: #1976d2;
+  color: white;
+  border-radius: 16px 16px 0 0;
+}
+
+.profile-info p {
+  margin: 4px 0;
+  font-size: 15px;
+}
+
+.subjects-card table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 12px;
+}
+
+th.mat-header-cell {
+  font-weight: bold;
+  background-color: #e3f2fd;
+}
+
+.no-subjects {
+  text-align: center;
+  color: #757575;
+  margin-top: 10px;
+  font-style: italic;
+}

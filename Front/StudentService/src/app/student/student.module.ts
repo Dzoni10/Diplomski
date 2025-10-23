@@ -6,12 +6,14 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
 import { MatIconModule } from '@angular/material/icon';
 import { MatTableModule } from '@angular/material/table';
+import { ProfileComponent } from './profile/profile.component';
 
 
 
 @NgModule({
   declarations: [
-    StudentDormitoryAccessComponent
+    StudentDormitoryAccessComponent,
+    ProfileComponent
   ],
   imports: [
     CommonModule,

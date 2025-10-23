@@ -1,8 +1,10 @@
 package com.example.studentservice.controller;
 
 import com.example.studentservice.domain.Student;
+import com.example.studentservice.domain.Subject;
 import com.example.studentservice.domain.User;
 import com.example.studentservice.dto.StudentDormitoryDTO;
+import com.example.studentservice.dto.StudentProfileDTO;
 import com.example.studentservice.service.CustomLoggerService;
 import com.example.studentservice.service.StudentService;
 import com.example.studentservice.service.UserService;
@@ -72,6 +74,21 @@ public class StudentController {
                     ipAddress
             );
             return new ResponseEntity<>("Successfull change dormitory status", HttpStatus.OK);
+    }
+
+//    @GetMapping("/profile/{email}")
+//    public ResponseEntity<StudentProfileDTO> getStudentProfile(@PathVariable String email) {
+//        StudentProfileDTO profile = studentService.getStudentProfile(email);
+//        if (profile == null) {
+//            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+//        }
+//        return new ResponseEntity<>(profile, HttpStatus.OK);
+//    }
+
+    @GetMapping("/unpassed/{email}")
+    public ResponseEntity<List<Subject>> getUnpassedSubjects(@PathVariable String email) {
+        List<Subject> unpassed = studentService.getUnpassedSubjects(email);
+        return new ResponseEntity<>(unpassed, HttpStatus.OK);
     }
 
     private String getClientIpAddress(HttpServletRequest request) {

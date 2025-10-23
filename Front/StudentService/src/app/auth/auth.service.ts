@@ -5,6 +5,8 @@ import { DecodedToken } from './model/decodedToken.model';
 import { Register } from './model/Register.model';
 import { AuthResponse } from './model/AuthResponse';
 import { jwtDecode } from 'jwt-decode';
+import { User } from './model/User.model';
+import { StudentProfile } from '../student/model/StudentProfile.model';
 
 @Injectable({
   providedIn: 'root'
@@ -26,6 +28,10 @@ export class AuthService {
   login(email: string, password: string):  Observable<AuthResponse>{
     const body = {email, password};
     return this.http.post<AuthResponse>(`${this.apiUrl}/login`,body)
+  }
+
+  getFullStudentById(id:number):Observable<StudentProfile>{
+    return this.http.get<StudentProfile>(`${this.apiUrl}/studentProfile/${id}`,{headers:this.getAuthHeaders()});
   }
 
   getAuthHeaders(): HttpHeaders {

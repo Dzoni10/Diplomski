@@ -1,0 +1,60 @@
+<div class="profile-container" *ngIf="studentProfile">
+  <mat-card class="profile-card">
+    <mat-card-header>
+      <mat-card-title>{{ studentProfile.name }} {{ studentProfile.surname }}</mat-card-title>
+      <mat-card-subtitle>Indeks: {{ studentProfile.index }}</mat-card-subtitle>
+    </mat-card-header>
+
+    <mat-card-content>
+      <div class="profile-info">
+        <p><strong>Email:</strong> {{ studentProfile.email }}</p>
+        <p><strong>Godina studija:</strong> {{ studentProfile.year }}</p>
+        <p><strong>Status doma:</strong> {{ convertDormitoryStatus(studentProfile.dormitoryStatus) }}</p>
+        <p><strong>Budžet:</strong> {{ studentProfile.budget ? 'DA' : 'NE' }}</p>
+        <p><strong>Prosek:</strong> {{ studentProfile.averageGrade | number: '1.2-2' }}</p>
+        <p><strong>Ukupno ESPB:</strong> {{ calculateEspb(studentProfile.passedSubjects) }}</p>
+      </div>
+    </mat-card-content>
+  </mat-card>
+
+  <mat-card class="subjects-card">
+    <mat-card-header>
+      <mat-card-title>Položeni predmeti</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <table mat-table [dataSource]="studentProfile.passedSubjects" class="mat-elevation-z8">
+
+        <!-- Naziv predmeta -->
+        <ng-container matColumnDef="name">
+          <th mat-header-cell *matHeaderCellDef> Naziv </th>
+          <td mat-cell *matCellDef="let subject"> {{subject.name}} </td>
+        </ng-container>
+
+        <!-- ESPB -->
+        <ng-container matColumnDef="espb">
+          <th mat-header-cell *matHeaderCellDef> ESPB </th>
+          <td mat-cell *matCellDef="let subject"> {{subject.espb}} </td>
+        </ng-container>
+
+        <!-- Semestar -->
+        <ng-container matColumnDef="semester">
+          <th mat-header-cell *matHeaderCellDef> Semestar </th>
+          <td mat-cell *matCellDef="let subject"> {{subject.semester}} </td>
+        </ng-container>
+
+        <!-- Smer/oblast -->
+        <ng-container matColumnDef="field">
+          <th mat-header-cell *matHeaderCellDef> Oblast </th>
+          <td mat-cell *matCellDef="let subject"> {{subject.field}} </td>
+        </ng-container>
+
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+      </table>
+
+      <p *ngIf="!studentProfile.passedSubjects?.length" class="no-subjects">
+        Nema položenih predmeta.
+      </p>
+    </mat-card-content>
+  </mat-card>
+</div>

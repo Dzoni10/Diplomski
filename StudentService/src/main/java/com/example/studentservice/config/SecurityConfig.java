@@ -47,6 +47,7 @@ public class SecurityConfig {
                         .requestMatchers(HttpMethod.POST, "/api/users/login").permitAll()
                         .requestMatchers(HttpMethod.GET, "/api/student/dormitory").hasRole("ADMINSCNS")
                         .requestMatchers(HttpMethod.PUT, "/api/users/login").permitAll()
+                        .requestMatchers(HttpMethod.GET, "/api/users/studentProfile/**").hasRole("STUDENT")
 
                         // Sve ostalo traži auth
                         .anyRequest().authenticated()

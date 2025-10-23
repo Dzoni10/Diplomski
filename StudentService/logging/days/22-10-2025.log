@@ -1,0 +1,25 @@
+{
+  "timestamp" : "2025-10-22T17:06:09.464Z",
+  "eventType" : "LOGIN_SUCCESS",
+  "category" : "AUTHENTICATION",
+  "eventId" : "1761152769464-189",
+  "user" : "nikola.milivojevic.555@gmail.com",
+  "role" : "STUDENT",
+  "result" : "SUCCESS",
+  "message" : "User logged in successfully",
+  "ipAddress" : "0:0:0:0:0:0:0:1",
+  "userAgent" : "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36"
+}
+
+{
+  "timestamp" : "2025-10-22T21:00:28.418Z",
+  "eventType" : "LOGIN_SUCCESS",
+  "category" : "AUTHENTICATION",
+  "eventId" : "1761166828418-909",
+  "user" : "nikola.milivojevic.555@gmail.com",
+  "role" : "STUDENT",
+  "result" : "SUCCESS",
+  "message" : "User logged in successfully",
+  "ipAddress" : "0:0:0:0:0:0:0:1",
+  "userAgent" : "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36"
+}

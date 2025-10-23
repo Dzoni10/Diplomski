@@ -7,6 +7,7 @@ import com.example.studentservice.auth.SessionRegistry;
 import com.example.studentservice.domain.*;
 import com.example.studentservice.dto.LogInRequest;
 import com.example.studentservice.dto.StudentDormitoryDTO;
+import com.example.studentservice.dto.StudentProfileDTO;
 import com.example.studentservice.dto.UserDTO;
 import com.example.studentservice.mapper.UserDTOMapper;
 import com.example.studentservice.repositoryInterfaces.VerificationTokenRepositoryInterface;
@@ -21,9 +22,7 @@ import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
 import java.time.LocalDateTime;
-import java.util.List;
-import java.util.Map;
-import java.util.UUID;
+import java.util.*;
 
 @RestController
 @RequestMapping("/api/users")
@@ -32,6 +31,9 @@ public class UserController {
 
     @Autowired
     private UserService userService;
+
+    @Autowired
+    private StudentService studentService;
 
     @Autowired
     private EmailService emailService;
@@ -406,6 +408,19 @@ public class UserController {
                     null
             );
             return new ResponseEntity<>("Cannot change password",HttpStatus.NOT_ACCEPTABLE);
+        }
+    }
+
+
+    @GetMapping("/studentProfile/{id}")
+    public ResponseEntity<?> getFullStudentById(@PathVariable("id") int id){
+        try {
+            StudentProfileDTO studentProfile = studentService.getStudentProfileById(id);
+            return ResponseEntity.ok(studentProfile);
+        } catch (NoSuchElementException e) {
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).body(e.getMessage());
+        } catch (Exception e) {
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body("Error fetching student profile");
         }
     }
 
