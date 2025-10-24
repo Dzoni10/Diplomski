@@ -16,6 +16,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatTableModule } from '@angular/material/table';
 import { StudentModule } from './student/student.module';
 import { SubjectModule } from './subject/subject.module';
+import { MatSelectModule } from '@angular/material/select';
 
 @NgModule({
   declarations: [
@@ -36,7 +37,8 @@ import { SubjectModule } from './subject/subject.module';
     MatIconModule,
     MatTableModule,
     StudentModule,
-    SubjectModule
+    SubjectModule,
+    MatSelectModule
   ],
   providers: [
     {provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi:true}

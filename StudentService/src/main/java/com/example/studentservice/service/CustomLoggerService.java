@@ -22,6 +22,7 @@ public class CustomLoggerService {
     private static final String DAYS_DIR = "days";
     private static final String AUTH_DIR = "register-login";
     private static final String DORMITORY_DIR = "dormitory";
+    private static final String FACULTY_DIR = "faculty";
 
     private static final DateTimeFormatter DATE_FORMATTER = DateTimeFormatter.ofPattern("dd-MM-yyyy");
 
@@ -59,6 +60,14 @@ public class CustomLoggerService {
         // Write to both universal daily log and password manager-specific log
         writeToUniversalLog(logEntry);
         writeToSpecificLog(logEntry, DORMITORY_DIR);
+    }
+
+    public void logChangeFacultyStatusEvent(String eventType, String email, String role, String result, String message, String ipAddress) {
+        LogEntry logEntry = createLogEntry(eventType, "FACULTY", email, role, result, message, ipAddress, null);
+
+        // Write to both universal daily log and password manager-specific log
+        writeToUniversalLog(logEntry);
+        writeToSpecificLog(logEntry, FACULTY_DIR);
     }
 
     private static class LogEntry {

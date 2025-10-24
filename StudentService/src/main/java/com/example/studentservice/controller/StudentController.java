@@ -4,6 +4,7 @@ import com.example.studentservice.domain.Student;
 import com.example.studentservice.domain.Subject;
 import com.example.studentservice.domain.User;
 import com.example.studentservice.dto.StudentDormitoryDTO;
+import com.example.studentservice.dto.StudentFacultyDTO;
 import com.example.studentservice.dto.StudentProfileDTO;
 import com.example.studentservice.service.CustomLoggerService;
 import com.example.studentservice.service.StudentService;
@@ -16,6 +17,7 @@ import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Map;
 
 @RestController
 @RequestMapping("/api/student")
@@ -76,14 +78,62 @@ public class StudentController {
             return new ResponseEntity<>("Successfull change dormitory status", HttpStatus.OK);
     }
 
-//    @GetMapping("/profile/{email}")
-//    public ResponseEntity<StudentProfileDTO> getStudentProfile(@PathVariable String email) {
-//        StudentProfileDTO profile = studentService.getStudentProfile(email);
-//        if (profile == null) {
-//            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
-//        }
-//        return new ResponseEntity<>(profile, HttpStatus.OK);
-//    }
+
+    @GetMapping("/faculty/students")
+    public ResponseEntity<?> getAllStudentsWithPassedSubjects() {
+        try {
+            List<StudentFacultyDTO> students = studentService.getAllStudentsWithPassedSubjects();
+            return ResponseEntity.ok(students);
+        } catch (Exception e) {
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR)
+                    .body("Error fetching students with passed subjects: " + e.getMessage());
+        }
+    }
+
+    @PutMapping("/changeFacultyStatus")
+    public ResponseEntity<?> changeFacultyStatus(@RequestBody @Validated StudentFacultyDTO studentFacultyDTO, HttpServletRequest request) {
+
+        String ipAddress = getClientIpAddress(request);
+
+        if(studentFacultyDTO==null)
+        {
+            loggerService.logChangeDormitoryEvent(
+                    "FAILED_CHANGE_STUDENT_STATUS",
+                    "ftn@gmail.com",
+                    "ADMINFAKS",
+                    "FAILURE",
+                    "CANNOT CHANGE STUDENT STATUS",
+                    ipAddress
+            );
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR)
+                    .body(Map.of("message", "Unsuccessful change student status"));
+        }
+        User user = userService.findByEmail(studentFacultyDTO.email);
+
+        if (user == null) {
+            return ResponseEntity.status(HttpStatus.NOT_FOUND)
+                    .body(Map.of("message", "Unsuccessful change student status"));
+        }
+
+        Student student = (Student) user;
+        student.setBudget(studentFacultyDTO.budget);
+        student.setYear(studentFacultyDTO.year);
+        student.setStudyType(studentFacultyDTO.studyType);
+        
+        userService.save(student);
+
+        loggerService.logChangeDormitoryEvent(
+                "SUCCESSFULL CHANGE STUDENT STATUS",
+                "ftn@gmail.com",
+                "ADMINFAKS",
+                "SUCCESS",
+                "SUCCESSFULL CHANGE STUDENT STATUS",
+                ipAddress
+        );
+        return ResponseEntity.ok(Map.of("message", "Successfull change student status"));
+    }
+
+
 
     @GetMapping("/unpassed/{email}")
     public ResponseEntity<List<Subject>> getUnpassedSubjects(@PathVariable String email) {

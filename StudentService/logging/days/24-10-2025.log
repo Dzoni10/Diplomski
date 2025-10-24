@@ -1,0 +1,129 @@
+{
+  "timestamp" : "2025-10-24T16:36:14.324Z",
+  "eventType" : "LOGIN_SUCCESS",
+  "category" : "AUTHENTICATION",
+  "eventId" : "1761323774324-181",
+  "user" : "nikola.milivojevic.555@gmail.com",
+  "role" : "STUDENT",
+  "result" : "SUCCESS",
+  "message" : "User logged in successfully",
+  "ipAddress" : "0:0:0:0:0:0:0:1",
+  "userAgent" : "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36"
+}
+
+{
+  "timestamp" : "2025-10-24T16:57:04.464Z",
+  "eventType" : "LOGIN_SUCCESS",
+  "category" : "AUTHENTICATION",
+  "eventId" : "1761325024464-57",
+  "user" : "scns@gmail.com",
+  "role" : "ADMINSCNS",
+  "result" : "SUCCESS",
+  "message" : "User logged in successfully",
+  "ipAddress" : "0:0:0:0:0:0:0:1",
+  "userAgent" : "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36"
+}
+
+{
+  "timestamp" : "2025-10-24T21:27:04.277Z",
+  "eventType" : "LOGIN_SUCCESS",
+  "category" : "AUTHENTICATION",
+  "eventId" : "1761341224278-158",
+  "user" : "scns@gmail.com",
+  "role" : "ADMINSCNS",
+  "result" : "SUCCESS",
+  "message" : "User logged in successfully",
+  "ipAddress" : "0:0:0:0:0:0:0:1",
+  "userAgent" : "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36"
+}
+
+{
+  "timestamp" : "2025-10-24T21:27:34.765Z",
+  "eventType" : "LOGIN_SUCCESS",
+  "category" : "AUTHENTICATION",
+  "eventId" : "1761341254765-707",
+  "user" : "nikola.milivojevic.555@gmail.com",
+  "role" : "STUDENT",
+  "result" : "SUCCESS",
+  "message" : "User logged in successfully",
+  "ipAddress" : "0:0:0:0:0:0:0:1",
+  "userAgent" : "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36"
+}
+
+{
+  "timestamp" : "2025-10-24T21:28:55.039Z",
+  "eventType" : "LOGIN_SUCCESS",
+  "category" : "AUTHENTICATION",
+  "eventId" : "1761341335039-410",
+  "user" : "ftn@gmail.com",
+  "role" : "ADMINFAKS",
+  "result" : "SUCCESS",
+  "message" : "User logged in successfully",
+  "ipAddress" : "0:0:0:0:0:0:0:1",
+  "userAgent" : "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36"
+}
+
+{
+  "timestamp" : "2025-10-24T21:33:20.561Z",
+  "eventType" : "SUCCESSFULL CHANGE STUDENT STATUS",
+  "category" : "DORMITORY",
+  "eventId" : "1761341600561-735",
+  "user" : "ftn@gmail.com",
+  "role" : "ADMINFAKS",
+  "result" : "SUCCESS",
+  "message" : "SUCCESSFULL CHANGE STUDENT STATUS",
+  "ipAddress" : "0:0:0:0:0:0:0:1",
+  "userAgent" : null
+}
+
+{
+  "timestamp" : "2025-10-24T21:33:46.328Z",
+  "eventType" : "SUCCESSFULL CHANGE STUDENT STATUS",
+  "category" : "DORMITORY",
+  "eventId" : "1761341626328-820",
+  "user" : "ftn@gmail.com",
+  "role" : "ADMINFAKS",
+  "result" : "SUCCESS",
+  "message" : "SUCCESSFULL CHANGE STUDENT STATUS",
+  "ipAddress" : "0:0:0:0:0:0:0:1",
+  "userAgent" : null
+}
+
+{
+  "timestamp" : "2025-10-24T21:43:07.885Z",
+  "eventType" : "SUCCESSFULL CHANGE STUDENT STATUS",
+  "category" : "DORMITORY",
+  "eventId" : "1761342187885-721",
+  "user" : "ftn@gmail.com",
+  "role" : "ADMINFAKS",
+  "result" : "SUCCESS",
+  "message" : "SUCCESSFULL CHANGE STUDENT STATUS",
+  "ipAddress" : "0:0:0:0:0:0:0:1",
+  "userAgent" : null
+}
+
+{
+  "timestamp" : "2025-10-24T21:54:20.764Z",
+  "eventType" : "SUCCESSFULL CHANGE STUDENT STATUS",
+  "category" : "DORMITORY",
+  "eventId" : "1761342860764-924",
+  "user" : "ftn@gmail.com",
+  "role" : "ADMINFAKS",
+  "result" : "SUCCESS",
+  "message" : "SUCCESSFULL CHANGE STUDENT STATUS",
+  "ipAddress" : "0:0:0:0:0:0:0:1",
+  "userAgent" : null
+}
+
+{
+  "timestamp" : "2025-10-24T21:55:55.471Z",
+  "eventType" : "SUCCESSFULL CHANGE STUDENT STATUS",
+  "category" : "DORMITORY",
+  "eventId" : "1761342955471-768",
+  "user" : "ftn@gmail.com",
+  "role" : "ADMINFAKS",
+  "result" : "SUCCESS",
+  "message" : "SUCCESSFULL CHANGE STUDENT STATUS",
+  "ipAddress" : "0:0:0:0:0:0:0:1",
+  "userAgent" : null
+}

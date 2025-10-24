@@ -21,6 +21,7 @@ export class StudentDormitoryAccessComponent implements OnInit {
     'year',
     'budget',
     'averageGrade',
+    'studyType',
     'dormitoryStatus',
     'actions'
   ];

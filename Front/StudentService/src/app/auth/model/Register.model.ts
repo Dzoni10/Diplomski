@@ -4,5 +4,6 @@ export interface Register
     surname: string,
     email: string,
     password: string,
-    index: string
+    index: string,
+    studyType:string
 }

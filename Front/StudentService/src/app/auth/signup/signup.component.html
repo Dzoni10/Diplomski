@@ -21,6 +21,16 @@
     </mat-form-field>
 
     <mat-form-field>
+      <mat-label>Vrsta studija</mat-label>
+      <mat-select formControlName="studyType" placeholder="Izaberi vrstu studija">
+        <mat-option value="OAS">OAS (Osnovne akademske)</mat-option>
+        <mat-option value="MAS">MAS (Master akademske studije)</mat-option>
+    <mat-option value="PHD">PHD (Doktorske studije)</mat-option>
+      </mat-select>
+      <mat-error *ngIf="hasError('studyType')">{{ getErrorMessage('studyType') }}</mat-error>
+    </mat-form-field>
+
+    <mat-form-field>
       <mat-label>Email</mat-label>
       <input matInput formControlName="email" type="email"/>
       <mat-error *ngIf="hasError('email')">{{ getErrorMessage('email') }}</mat-error>

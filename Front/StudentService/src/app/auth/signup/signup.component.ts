@@ -61,7 +61,8 @@ export class SignupComponent implements OnInit {
         Validators.minLength(9),
         Validators.maxLength(11),
         Validators.pattern(/^(?:[A-Z]{2}|[A-Z][0-9])-(?:[1-9]|[1-9][0-9]|1[0-9]{2}|2[0-3][0-9]|240)-20(1[1-9]|[2-9][0-9])$/)
-      ]]
+      ]],
+      studyType: ['', Validators.required]
     }, {
       validators: this.passwordMatchValidator
     });
@@ -140,7 +141,7 @@ export class SignupComponent implements OnInit {
   getErrorMessage(fieldName: string): string {
     const control = this.signupForm.get(fieldName);
     if (!control || !control.errors || !control.touched) return '';
-
+    if (fieldName === 'studyType' && control.errors['required']) return 'Odaberite vrstu studija';
     if (control.errors['required']) return `Obavezno polje`;
     if (control.errors['minlength']) return `Minimum ${control.errors['minlength'].requiredLength} karatkera`;
     if (control.errors['maxlength']) return `Maximum ${control.errors['maxlength'].requiredLength} karaktera`;

@@ -5,6 +5,7 @@ import { StudentDormitory } from './model/StudentDormitory.model';
 import { AuthService } from '../auth/auth.service';
 import { SubjectFaculty } from '../subject/model/SubjectFaculty.model';
 import { StudentProfile } from './model/StudentProfile.model';
+import { StudentFaculty } from './model/StudentFaculty.model';
 @Injectable({
   providedIn: 'root'
 })
@@ -14,7 +15,17 @@ export class StudentService {
 
   constructor(private http: HttpClient,private authService: AuthService) { }
 
-  getAllStudents(): Observable<StudentDormitory[]> {
+  
+
+getAllFacultyStudents(): Observable<StudentFaculty[]> {
+  return this.http.get<StudentFaculty[]>(`${this.apiUrl}/faculty/students`,{headers:this.getAuthHeaders()});
+}
+
+changeStudentStatus(change: StudentFaculty): Observable<any> {
+  return this.http.put(`${this.apiUrl}/changeFacultyStatus`,change,{headers:this.getAuthHeaders()});
+}
+
+getAllStudents(): Observable<StudentDormitory[]> {
   return this.http.get<StudentDormitory[]>(`${this.apiUrl}/dormitory`,{headers:this.getAuthHeaders()});
 }
 

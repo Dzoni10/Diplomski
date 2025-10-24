@@ -29,13 +29,11 @@ export class ProfileComponent {
     });
   }
 
-
   calculateEspb(passedSubjects: SubjectFaculty[]): number{
     return passedSubjects.reduce((accumulator, subject) => {
     return accumulator + subject.espb;
   }, 0); 
   }
-
 
   convertDormitoryStatus(status:string): string{
     switch(status)
@@ -48,5 +46,20 @@ export class ProfileComponent {
         return 'NIJE KORISNIK'
     }
   }
+
+  convertStudyType(studyType:string):string{
+    switch(studyType){
+      case 'OAS':
+        return "OAS (Osnovne akademske studije)";
+      case 'MAS':
+        return "MAS (Master studije)";
+      case 'PHD':
+        return 'PHD (Doktorske studije)';
+      default:
+        return 'nedefinisano';
+    }
+  }
+
+
 
 }

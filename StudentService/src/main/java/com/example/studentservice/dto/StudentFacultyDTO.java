@@ -1,13 +1,11 @@
 package com.example.studentservice.dto;
 
-import com.example.studentservice.domain.DormitoryStatus;
-import com.example.studentservice.domain.Student;
 import com.example.studentservice.domain.StudyType;
 import com.example.studentservice.domain.Subject;
 
 import java.util.List;
 
-public class StudentProfileDTO {
+public class StudentFacultyDTO {
 
     public String name;
     public String surname;
@@ -15,36 +13,36 @@ public class StudentProfileDTO {
     public String email;
     public int year;
     public boolean budget;
+    public double money;
     public double averageGrade;
     public StudyType studyType;
-    public DormitoryStatus dormitoryStatus;
     public List<Subject> passedSubjects;
 
-    public StudentProfileDTO() {}
+    public StudentFacultyDTO() {}
 
-    public StudentProfileDTO(String name,String surname,String index,String email, int year,boolean budget, double averageGrade,StudyType studyType, DormitoryStatus dormitoryStatus) {
+    public StudentFacultyDTO(String name,String surname,String index,String email,int year,boolean budget,double money,double averageGrade,StudyType studyType,List<Subject> passedSubjects) {
         this.name = name;
         this.surname = surname;
         this.index = index;
         this.email = email;
         this.year = year;
         this.budget = budget;
+        this.money = money;
         this.averageGrade = averageGrade;
         this.studyType = studyType;
-        this.dormitoryStatus = dormitoryStatus;
+        this.passedSubjects = passedSubjects;
     }
 
-    public StudentProfileDTO(String name,String surname,String index,String email, int year,boolean budget, double averageGrade,StudyType studyType, DormitoryStatus dormitoryStatus, List<Subject> passedSubjects) {
+    public StudentFacultyDTO(String name,String surname,String index,String email,int year,boolean budget,double money,double averageGrade,StudyType studyType){
         this.name = name;
         this.surname = surname;
         this.index = index;
         this.email = email;
         this.year = year;
         this.budget = budget;
+        this.money = money;
         this.averageGrade = averageGrade;
-        this.dormitoryStatus = dormitoryStatus;
-        this.studyType=studyType;
-        this.passedSubjects=passedSubjects;
+        this.studyType = studyType;
     }
 
 

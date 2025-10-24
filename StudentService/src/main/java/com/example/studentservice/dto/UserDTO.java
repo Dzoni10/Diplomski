@@ -1,6 +1,7 @@
 package com.example.studentservice.dto;
 
 import com.example.studentservice.domain.Role;
+import com.example.studentservice.domain.StudyType;
 import com.example.studentservice.domain.User;
 import com.example.studentservice.validation.StrongPassword;
 import com.example.studentservice.validation.ValidationConstants;
@@ -54,6 +55,8 @@ public class UserDTO {
             message = ValidationConstants.INDEX_INVALID_MSG)
     public String index;
 
+    @NotBlank(message = "Study type is required")
+    public StudyType studyType;
 
     public UserDTO(){}
 
@@ -73,7 +76,7 @@ public class UserDTO {
     }
 
     public UserDTO(int id, String name, String surname, String email, String password,
-                   Role role, boolean isVerified, String index){
+                   Role role, boolean isVerified, String index, StudyType studyType){
         this.id=id;
         this.name=name;
         this.surname=surname;
@@ -82,5 +85,6 @@ public class UserDTO {
         this.role=role;
         this.isVerified=isVerified;
         this.index=index;
+        this.studyType=studyType;
     }
 }

@@ -6,5 +6,7 @@ export interface StudentDormitory {
   year: number;
   budget: boolean;
   averageGrade: number;
+  studyType: string;
   dormitoryStatus: string;
+  
 }

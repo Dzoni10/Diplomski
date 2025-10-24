@@ -7,13 +7,16 @@ import { MatCardModule } from '@angular/material/card';
 import { MatIconModule } from '@angular/material/icon';
 import { MatTableModule } from '@angular/material/table';
 import { ProfileComponent } from './profile/profile.component';
-
+import { FacultyComponent } from './faculty/faculty.component';
+import { MatSelectModule} from '@angular/material/select'
+import { FormsModule } from '@angular/forms';
 
 
 @NgModule({
   declarations: [
     StudentDormitoryAccessComponent,
-    ProfileComponent
+    ProfileComponent,
+    FacultyComponent
   ],
   imports: [
     CommonModule,
@@ -21,7 +24,9 @@ import { ProfileComponent } from './profile/profile.component';
     MatButtonModule,
     MatCardModule,
     MatIconModule,
-    MatTableModule
+    MatTableModule,
+    MatSelectModule,
+    FormsModule
   ]
 })
 export class StudentModule { }

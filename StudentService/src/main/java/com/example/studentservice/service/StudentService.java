@@ -2,8 +2,9 @@ package com.example.studentservice.service;
 
 import com.example.studentservice.domain.Student;
 import com.example.studentservice.domain.Subject;
-import com.example.studentservice.domain.User;
+import java.util.stream.Collectors;
 import com.example.studentservice.dto.StudentDormitoryDTO;
+import com.example.studentservice.dto.StudentFacultyDTO;
 import com.example.studentservice.dto.StudentProfileDTO;
 import com.example.studentservice.repositoryInterfaces.StudentRepositoryInterface;
 import org.springframework.stereotype.Service;
@@ -52,8 +53,30 @@ public class StudentService {
                 student.getYear(),
                 student.isBudget(),
                 student.getAverageGrade(),
+                student.getStudyType(),
                 student.getDormitoryStatus(),
                 student.getPassedSubjects()
         );
     }
+
+    public List<StudentFacultyDTO> getAllStudentsWithPassedSubjects() {
+        List<Student> students = studentRepository.findAllWithPassedSubjects();
+
+        return students.stream()
+                .map(s -> new StudentFacultyDTO(
+                        s.getName(),
+                        s.getSurname(),
+                        s.getIndex(),
+                        s.getEmail(),
+                        s.getYear(),
+                        s.isBudget(),
+                        s.getMoney(),
+                        s.getAverageGrade(),
+                        s.getStudyType(),
+                        s.getPassedSubjects()
+                ))
+                .collect(Collectors.toList());
+    }
+
+
 }

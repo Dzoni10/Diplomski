@@ -40,17 +40,22 @@ public class Student  extends User{
     private double money;
 
     @Enumerated(EnumType.STRING)
+    @Column(name="study_type", nullable=false)
+    private StudyType studyType;
+
+    @Enumerated(EnumType.STRING)
     @Column(name="dormitory_status", nullable=false)
     private DormitoryStatus dormitoryStatus;
 
     public Student(){}
-    public Student(String name, String surname,String email,String password,boolean isVerified,String index, int year, double averageGrade,boolean budget,double money,DormitoryStatus dormitoryStatus) {
+    public Student(String name, String surname,String email,String password,boolean isVerified,String index, int year, double averageGrade,boolean budget,double money,StudyType studyType,DormitoryStatus dormitoryStatus) {
         super(name,surname,email,password, Role.STUDENT,isVerified);
         this.index=index;
         this.year=year;
         this.averageGrade=averageGrade;
         this.budget=budget;
         this.money=money;
+        this.studyType=studyType;
         this.dormitoryStatus=dormitoryStatus;
     }
 
@@ -106,6 +111,14 @@ public class Student  extends User{
     }
     public void setMoney(double money) {
         this.money = money;
+    }
+
+    public StudyType getStudyType() {
+        return studyType;
+    }
+
+    public void setStudyType(StudyType studyType) {
+        this.studyType = studyType;
     }
 
     public DormitoryStatus getDormitoryStatus() {

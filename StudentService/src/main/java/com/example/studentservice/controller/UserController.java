@@ -86,6 +86,7 @@ public class UserController {
         savedUser.setVerified(false);
         savedUser.setBudget(false);
         savedUser.setIndex(studentRegistrationDTO.index);
+        savedUser.setStudyType(studentRegistrationDTO.studyType);
         savedUser.setAverageGrade(0.00);
         savedUser.setMoney(0);
         savedUser.setYear(1);

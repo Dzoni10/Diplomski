@@ -1,6 +1,7 @@
 package com.example.studentservice.dto;
 
 import com.example.studentservice.domain.DormitoryStatus;
+import com.example.studentservice.domain.StudyType;
 
 public class StudentDormitoryDTO {
     public String name;
@@ -10,10 +11,11 @@ public class StudentDormitoryDTO {
     public int year;
     public boolean budget;
     public double averageGrade;
+    public StudyType studyType;
     public DormitoryStatus dormitoryStatus;
 
     public StudentDormitoryDTO(String name, String surname, String index, String email,
-                               int year, boolean budget, double averageGrade,
+                               int year, boolean budget, double averageGrade,StudyType studyType,
                                DormitoryStatus dormitoryStatus) {
         this.name = name;
         this.surname = surname;
@@ -22,6 +24,7 @@ public class StudentDormitoryDTO {
         this.year = year;
         this.budget = budget;
         this.averageGrade = averageGrade;
+        this.studyType = studyType;
         this.dormitoryStatus = dormitoryStatus;
     }
 

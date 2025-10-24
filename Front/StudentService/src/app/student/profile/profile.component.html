@@ -13,6 +13,7 @@
         <p><strong>Budžet:</strong> {{ studentProfile.budget ? 'DA' : 'NE' }}</p>
         <p><strong>Prosek:</strong> {{ studentProfile.averageGrade | number: '1.2-2' }}</p>
         <p><strong>Ukupno ESPB:</strong> {{ calculateEspb(studentProfile.passedSubjects) }}</p>
+        <p><strong>Vrsta studija:</strong> {{ convertStudyType(studentProfile.studyType) }}</p>
       </div>
     </mat-card-content>
   </mat-card>
