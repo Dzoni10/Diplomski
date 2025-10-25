@@ -49,7 +49,11 @@ public class SecurityConfig {
                         .requestMatchers(HttpMethod.PUT, "/api/users/login").permitAll()
                         .requestMatchers(HttpMethod.GET, "/api/users/studentProfile/**").hasRole("STUDENT")
                         .requestMatchers(HttpMethod.GET, "/api/student/faculty/students").hasRole("ADMINFAKS")
-                        .requestMatchers(HttpMethod.GET, "/api/student/changeFacultyStatus").hasRole("ADMINFAKS")
+                        .requestMatchers(HttpMethod.PUT, "/api/student/changeFacultyStatus").hasRole("ADMINFAKS")
+                        .requestMatchers(HttpMethod.GET, "/api/subject/subjects").hasRole("ADMINFAKS")
+                        .requestMatchers(HttpMethod.GET, "/api/professor/professors").hasRole("ADMINFAKS")
+                        .requestMatchers(HttpMethod.POST, "/api/professorSubject/assign").hasRole("ADMINFAKS")
+                        .requestMatchers(HttpMethod.GET, "/api/subject/with-professors").hasRole("ADMINFAKS")
 
                         // Sve ostalo traži auth
                         .anyRequest().authenticated()

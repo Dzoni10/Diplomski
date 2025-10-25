@@ -21,6 +21,9 @@ public class Subject {
     @Column(nullable=false)
     private int semester;
 
+    @Column(nullable = false)
+    private int year;
+
     @Column(nullable=false)
     private String field;
 
@@ -31,10 +34,11 @@ public class Subject {
 
     public Subject() {}
 
-    public Subject(String name,int espb,int semester,String field,Professor professor) {
+    public Subject(String name,int espb,int semester,int year,String field,Professor professor) {
         this.name = name;
         this.espb = espb;
         this.semester = semester;
+        this.year=year;
         this.field=field;
         this.professor=professor;
     }
@@ -77,6 +81,14 @@ public class Subject {
 
     public void setSemester(int semester) {
         this.semester = semester;
+    }
+
+    public int getYear() {
+        return year;
+    }
+
+    public void setYear(int year) {
+        this.year = year;
     }
 
     public String getField() {

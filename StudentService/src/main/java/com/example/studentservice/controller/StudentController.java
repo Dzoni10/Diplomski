@@ -119,7 +119,7 @@ public class StudentController {
         student.setBudget(studentFacultyDTO.budget);
         student.setYear(studentFacultyDTO.year);
         student.setStudyType(studentFacultyDTO.studyType);
-        
+
         userService.save(student);
 
         loggerService.logChangeDormitoryEvent(

@@ -2,8 +2,12 @@
     <div class="navbar-title">Studentska služba</div>
 
     <div class="navbar-buttons">
+        <button mat-raised-button *ngIf="isLoggedIn()&&isLoggedProfesor()" class="login-button" [routerLink]="['profesor-subject']">Ispiti</button>
+        <button mat-raised-button *ngIf="isLoggedIn()&&isLoggedFAKSAdmin()" class="login-button" [routerLink]="['profesor-subject-list']">Predmeti</button>
+        <button mat-raised-button *ngIf="isLoggedIn()&&isLoggedFAKSAdmin()" class="login-button" [routerLink]="['add-profesor-subject']">Dodavanje profesora</button>
         <button mat-raised-button *ngIf="isLoggedIn()&&isLoggedFAKSAdmin()" class="login-button" [routerLink]="['student-faculty']">Upisani studenti</button>
         <button mat-raised-button *ngIf="isLoggedIn()&&isLoggedSCNSAdmin()" class="login-button" [routerLink]="['student-dormitory-access']">Useljenje studenata</button>
+        <button mat-raised-button *ngIf="isLoggedIn()&&isLoggedStudent()" class="login-button" [routerLink]="['exam-registration']">Prijava ispita</button>
         <button mat-raised-button *ngIf="isLoggedIn()&&isLoggedStudent()" class="login-button" [routerLink]="['student-profile']">Profil</button>
         <button mat-raised-button *ngIf="isLoggedIn()&&isLoggedStudent()" class="login-button" [routerLink]="['']">Finansijska kartica</button>
         <button mat-raised-button *ngIf="isLoggedIn()&&isLoggedStudent()" class="login-button" [routerLink]="['']">Menza</button>

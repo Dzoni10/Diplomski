@@ -1,0 +1,27 @@
+<div class="assign-container">
+  <mat-card class="assign-card">
+    <h2>Dodaj profesora na predmet</h2>
+
+    <form [formGroup]="form" (ngSubmit)="assign()">
+      <mat-form-field appearance="outline" class="form-field">
+        <mat-label>Profesor</mat-label>
+        <mat-select formControlName="professorId" required>
+          <mat-option *ngFor="let p of professors" [value]="p.id">
+            {{ p.name }} {{ p.surname }} {{p.email}}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+
+      <mat-form-field appearance="outline" class="form-field">
+        <mat-label>Predmet</mat-label>
+        <mat-select formControlName="subjectId" required>
+          <mat-option *ngFor="let s of subjects" [value]="s.id">
+            {{ s.name }} ({{ s.field }})
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+
+      <button mat-raised-button color="primary" [disabled]="form.invalid">Dodaj</button>
+    </form>
+  </mat-card>
+</div>

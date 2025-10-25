@@ -17,6 +17,7 @@ import { MatTableModule } from '@angular/material/table';
 import { StudentModule } from './student/student.module';
 import { SubjectModule } from './subject/subject.module';
 import { MatSelectModule } from '@angular/material/select';
+import { MatOptionModule } from '@angular/material/core';
 
 @NgModule({
   declarations: [
@@ -38,7 +39,8 @@ import { MatSelectModule } from '@angular/material/select';
     MatTableModule,
     StudentModule,
     SubjectModule,
-    MatSelectModule
+    MatSelectModule,
+    MatOptionModule
   ],
   providers: [
     {provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi:true}
