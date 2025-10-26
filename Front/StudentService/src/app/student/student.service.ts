@@ -7,6 +7,7 @@ import { SubjectFaculty } from '../subject/model/SubjectFaculty.model';
 import { StudentProfile } from './model/StudentProfile.model';
 import { StudentFaculty } from './model/StudentFaculty.model';
 import { StudentMeal } from './model/StudentMeal.model';
+import { StudentDeposit } from './model/StudentDeposit.mode';
 @Injectable({
   providedIn: 'root'
 })
@@ -48,6 +49,14 @@ getStudentProfile(email: string): Observable<StudentProfile> {
 
 changeMealNumber(change: StudentMeal):Observable<any>{
   return this.http.put(`${this.apiUrl}/changeMealNumber`,change,{headers:this.getAuthHeaders()});
+}
+
+depositMoney(data: StudentDeposit){
+  return this.http.post<StudentDeposit>(`${this.apiUrl}/deposit`,data,{headers:this.getAuthHeaders()});
+}
+
+getCurrentAmount(id: number): Observable<StudentDeposit>{
+  return this.http.get<StudentDeposit>(`${this.apiUrl}/getCurrentDeposit/${id}`,{headers:this.getAuthHeaders()});
 }
 
 private getAuthHeaders(): HttpHeaders {

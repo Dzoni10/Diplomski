@@ -3,10 +3,8 @@ package com.example.studentservice.service;
 import com.example.studentservice.domain.Student;
 import com.example.studentservice.domain.Subject;
 import java.util.stream.Collectors;
-import com.example.studentservice.dto.StudentDormitoryDTO;
-import com.example.studentservice.dto.StudentFacultyDTO;
-import com.example.studentservice.dto.StudentMealDTO;
-import com.example.studentservice.dto.StudentProfileDTO;
+
+import com.example.studentservice.dto.*;
 import com.example.studentservice.repositoryInterfaces.StudentRepositoryInterface;
 import org.springframework.stereotype.Service;
 
@@ -77,6 +75,24 @@ public class StudentService {
                         s.getPassedSubjects()
                 ))
                 .collect(Collectors.toList());
+    }
+
+    public Student depositMoney(int studentId, double amount) {
+        Student student = studentRepository.findById(studentId)
+                .orElseThrow(() -> new NoSuchElementException("Student not found with id: " + studentId));
+
+        if (amount <= 0) {
+            throw new IllegalArgumentException("Iznos mora biti veci od 0");
+        }
+
+        student.setMoney(student.getMoney() + amount);
+        return studentRepository.save(student);
+    }
+
+    public StudentDepositDTO getCurrentDeposit(int studentId){
+        Student s = studentRepository.findById(studentId).orElseThrow(()->new RuntimeException("Student not found"));
+
+        return new StudentDepositDTO(s.getId(),s.getMoney());
     }
 
     public StudentMealDTO getStudentMealInfo(int studentId) {

@@ -9,9 +9,9 @@
         <button mat-raised-button *ngIf="isLoggedIn()&&isLoggedSCNSAdmin()" class="login-button" [routerLink]="['student-dormitory-access']">Useljenje studenata</button>
         <button mat-raised-button *ngIf="isLoggedIn()&&isLoggedStudent()" class="login-button" [routerLink]="['exam-registration']">Prijava ispita</button>
         <button mat-raised-button *ngIf="isLoggedIn()&&isLoggedStudent()" class="login-button" [routerLink]="['student-profile']">Profil</button>
-        <button mat-raised-button *ngIf="isLoggedIn()&&isLoggedStudent()" class="login-button" [routerLink]="['']">Finansijska kartica</button>
+        <button mat-raised-button *ngIf="isLoggedIn()&&isLoggedStudent()" class="login-button" [routerLink]="['finance-card']">Finansijska kartica</button>
         <button mat-raised-button *ngIf="isLoggedIn()&&isLoggedStudent()" class="login-button" [routerLink]="['student-meal']">Menza</button>
-        <button mat-raised-button *ngIf="isLoggedIn()&&isLoggedStudent()" class="login-button" [routerLink]="['']">Studentski dom</button>
+        <button mat-raised-button *ngIf="isLoggedIn()&&isLoggedStudent()" class="login-button" [routerLink]="['dormitory-payment']">Uplata doma</button>
         <button mat-raised-button *ngIf="!isLoggedIn()" class="login-button" [routerLink]="['login']">Prijava</button>
         <button mat-raised-button *ngIf="isLoggedIn()" class="logout-button" [routerLink]="['login']" (click)="logout()">Odjava</button>
     </div>

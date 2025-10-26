@@ -3,10 +3,7 @@ package com.example.studentservice.controller;
 import com.example.studentservice.domain.Student;
 import com.example.studentservice.domain.Subject;
 import com.example.studentservice.domain.User;
-import com.example.studentservice.dto.StudentDormitoryDTO;
-import com.example.studentservice.dto.StudentFacultyDTO;
-import com.example.studentservice.dto.StudentMealDTO;
-import com.example.studentservice.dto.StudentProfileDTO;
+import com.example.studentservice.dto.*;
 import com.example.studentservice.service.CustomLoggerService;
 import com.example.studentservice.service.StudentService;
 import com.example.studentservice.service.UserService;
@@ -19,6 +16,7 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 import java.util.Map;
+import java.util.NoSuchElementException;
 
 @RestController
 @RequestMapping("/api/student")
@@ -122,6 +120,35 @@ public class StudentController {
         return ResponseEntity.ok(Map.of("message", "Successfull change meal number"));
     }
 
+    @PostMapping("/deposit")
+    public ResponseEntity<?> depositMoney(@RequestBody StudentDepositDTO dto) {
+        try {
+            Student updated = studentService.depositMoney(dto.studentId, dto.money);
+            return ResponseEntity.ok(Map.of(
+                    "message", "Uspešna uplata raspolozivo: " + dto.money + "RSD",
+                    "newBalance", updated.getMoney()
+            ));
+
+        } catch (NoSuchElementException e) {
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).body(Map.of("message", e.getMessage()));
+        } catch (IllegalArgumentException e) {
+            return ResponseEntity.badRequest().body(Map.of("message", e.getMessage()));
+        } catch (Exception e) {
+            return ResponseEntity.internalServerError().body(Map.of("message", "Greška pri uplati"));
+        }
+    }
+
+    @GetMapping("/getCurrentDeposit/{id}")
+    public ResponseEntity<?> getCurrentDeposit(@PathVariable int id) {
+        try {
+            StudentDepositDTO student = studentService.getCurrentDeposit(id);
+            return ResponseEntity.ok(student);
+        } catch (Exception e) {
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR)
+                    .body("Error finding student deposit " + e.getMessage());
+        }
+    }
+
 
     @GetMapping("/faculty/students")
     public ResponseEntity<?> getAllStudentsWithPassedSubjects() {
@@ -133,6 +160,8 @@ public class StudentController {
                     .body("Error fetching students with passed subjects: " + e.getMessage());
         }
     }
+
+
 
     @PutMapping("/changeFacultyStatus")
     public ResponseEntity<?> changeFacultyStatus(@RequestBody @Validated StudentFacultyDTO studentFacultyDTO, HttpServletRequest request) {

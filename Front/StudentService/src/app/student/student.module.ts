@@ -9,8 +9,11 @@ import { MatTableModule } from '@angular/material/table';
 import { ProfileComponent } from './profile/profile.component';
 import { FacultyComponent } from './faculty/faculty.component';
 import { MatSelectModule} from '@angular/material/select'
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { StudentMealComponent } from './student-meal/student-meal.component';
+import { FinanceCardComponent } from './finance-card/finance-card.component';
+import { DormitoryPaymentComponent } from './dormitory-payment/dormitory-payment.component';
+import { MatInputModule } from '@angular/material/input';
 
 
 @NgModule({
@@ -18,7 +21,9 @@ import { StudentMealComponent } from './student-meal/student-meal.component';
     StudentDormitoryAccessComponent,
     ProfileComponent,
     FacultyComponent,
-    StudentMealComponent
+    StudentMealComponent,
+    FinanceCardComponent,
+    DormitoryPaymentComponent
   ],
   imports: [
     CommonModule,
@@ -28,7 +33,9 @@ import { StudentMealComponent } from './student-meal/student-meal.component';
     MatIconModule,
     MatTableModule,
     MatSelectModule,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule,
+    MatInputModule
   ]
 })
 export class StudentModule { }

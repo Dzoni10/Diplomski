@@ -10,6 +10,8 @@ import { ExamRegistrationComponent } from './subject/exam-registration/exam-regi
 import { AddProfesorComponent } from './subject/add-profesor/add-profesor.component';
 import { ProfessorSubjectListComponent } from './subject/professor-subject-list/professor-subject-list.component';
 import { StudentMealComponent } from './student/student-meal/student-meal.component';
+import { FinanceCardComponent } from './student/finance-card/finance-card.component';
+import { DormitoryPaymentComponent } from './student/dormitory-payment/dormitory-payment.component';
 
 const routes: Routes = [
    { path: 'login', component: LoginComponent },
@@ -22,6 +24,9 @@ const routes: Routes = [
    { path: 'add-profesor-subject', component: AddProfesorComponent},
    { path: 'profesor-subject-list', component: ProfessorSubjectListComponent},
    { path: 'student-meal', component: StudentMealComponent},
+   { path: 'finance-card', component: FinanceCardComponent},
+   { path: 'dormitory-payment', component:DormitoryPaymentComponent}
+
 ];
 
 @NgModule({

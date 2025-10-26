@@ -48,6 +48,8 @@ public class SecurityConfig {
                         .requestMatchers(HttpMethod.GET, "/api/student/dormitory").hasRole("ADMINSCNS")
                         .requestMatchers(HttpMethod.PUT, "/api/users/login").permitAll()
                         .requestMatchers(HttpMethod.GET, "/api/users/studentProfile/**").hasRole("STUDENT")
+                        .requestMatchers(HttpMethod.POST, "/api/student/deposit").hasRole("STUDENT")
+                        .requestMatchers(HttpMethod.GET, "/api/student/getCurrentDeposit").hasRole("STUDENT")
                         .requestMatchers(HttpMethod.GET, "/api/student/meal-info/**").hasRole("STUDENT")
                         .requestMatchers(HttpMethod.PUT, "/api/student/changeMealNumber").hasRole("STUDENT")
                         .requestMatchers(HttpMethod.GET, "/api/student/faculty/students").hasRole("ADMINFAKS")
