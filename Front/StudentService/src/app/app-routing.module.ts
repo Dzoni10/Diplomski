@@ -9,6 +9,7 @@ import { ProfesorSubjectComponent } from './subject/profesor-subject/profesor-su
 import { ExamRegistrationComponent } from './subject/exam-registration/exam-registration.component';
 import { AddProfesorComponent } from './subject/add-profesor/add-profesor.component';
 import { ProfessorSubjectListComponent } from './subject/professor-subject-list/professor-subject-list.component';
+import { StudentMealComponent } from './student/student-meal/student-meal.component';
 
 const routes: Routes = [
    { path: 'login', component: LoginComponent },
@@ -19,7 +20,8 @@ const routes: Routes = [
    { path: 'profesor-subject', component: ProfesorSubjectComponent},
    { path: 'exam-registration', component: ExamRegistrationComponent},
    { path: 'add-profesor-subject', component: AddProfesorComponent},
-   { path: 'profesor-subject-list', component: ProfessorSubjectListComponent}
+   { path: 'profesor-subject-list', component: ProfessorSubjectListComponent},
+   { path: 'student-meal', component: StudentMealComponent},
 ];
 
 @NgModule({

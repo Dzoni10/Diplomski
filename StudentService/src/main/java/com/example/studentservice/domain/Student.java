@@ -47,8 +47,17 @@ public class Student  extends User{
     @Column(name="dormitory_status", nullable=false)
     private DormitoryStatus dormitoryStatus;
 
+    @Column(name="breakfast")
+    private int breakfast;
+
+    @Column(name="lunch")
+    private int lunch;
+
+    @Column(name="dinner")
+    private int dinner;
+
     public Student(){}
-    public Student(String name, String surname,String email,String password,boolean isVerified,String index, int year, double averageGrade,boolean budget,double money,StudyType studyType,DormitoryStatus dormitoryStatus) {
+    public Student(String name, String surname,String email,String password,boolean isVerified,String index, int year, double averageGrade,boolean budget,double money,StudyType studyType,DormitoryStatus dormitoryStatus,int breakfast,int lunch,int dinner) {
         super(name,surname,email,password, Role.STUDENT,isVerified);
         this.index=index;
         this.year=year;
@@ -57,6 +66,9 @@ public class Student  extends User{
         this.money=money;
         this.studyType=studyType;
         this.dormitoryStatus=dormitoryStatus;
+        this.breakfast=breakfast;
+        this.lunch=lunch;
+        this.dinner=dinner;
     }
 
     public String getIndex() {
@@ -127,5 +139,29 @@ public class Student  extends User{
 
     public void setDormitoryStatus(DormitoryStatus dormitoryStatus) {
         this.dormitoryStatus = dormitoryStatus;
+    }
+
+    public int getBreakfast() {
+        return breakfast;
+    }
+
+    public void setBreakfast(int breakfast) {
+        this.breakfast = breakfast;
+    }
+
+    public int getLunch() {
+        return lunch;
+    }
+
+    public void setLunch(int lunch) {
+        this.lunch = lunch;
+    }
+
+    public int getDinner() {
+        return dinner;
+    }
+
+    public void setDinner(int dinner) {
+        this.dinner = dinner;
     }
 }

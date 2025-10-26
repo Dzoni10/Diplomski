@@ -23,6 +23,7 @@ public class CustomLoggerService {
     private static final String AUTH_DIR = "register-login";
     private static final String DORMITORY_DIR = "dormitory";
     private static final String FACULTY_DIR = "faculty";
+    private static final String MEAL_DIR = "meal";
 
     private static final DateTimeFormatter DATE_FORMATTER = DateTimeFormatter.ofPattern("dd-MM-yyyy");
 
@@ -42,6 +43,9 @@ public class CustomLoggerService {
         try {
             Files.createDirectories(Paths.get(BASE_LOG_DIR, DAYS_DIR));
             Files.createDirectories(Paths.get(BASE_LOG_DIR, AUTH_DIR));
+            Files.createDirectories(Paths.get(BASE_LOG_DIR, DORMITORY_DIR));
+            Files.createDirectories(Paths.get(BASE_LOG_DIR, FACULTY_DIR));
+            Files.createDirectories(Paths.get(BASE_LOG_DIR, MEAL_DIR));
         } catch (IOException e) {
             System.err.println("Failed to create log directories: " + e.getMessage());
         }
@@ -68,6 +72,14 @@ public class CustomLoggerService {
         // Write to both universal daily log and password manager-specific log
         writeToUniversalLog(logEntry);
         writeToSpecificLog(logEntry, FACULTY_DIR);
+    }
+
+    public void logChangeMealNumberEvent(String eventType, String email, String role, String result, String message, String ipAddress) {
+        LogEntry logEntry = createLogEntry(eventType, "MEAL", email, role, result, message, ipAddress, null);
+
+        // Write to both universal daily log and password manager-specific log
+        writeToUniversalLog(logEntry);
+        writeToSpecificLog(logEntry, MEAL_DIR);
     }
 
     private static class LogEntry {

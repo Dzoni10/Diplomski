@@ -1,0 +1,38 @@
+{
+  "timestamp" : "2025-10-26T09:43:45.894Z",
+  "eventType" : "SUCCESSFULL CHANGE",
+  "category" : "MEAL",
+  "eventId" : "1761471825894-16",
+  "user" : "nikola.milivojevic.555@gmail.com",
+  "role" : "STUDENT",
+  "result" : "SUCCESS",
+  "message" : "SUCCESSFULL CHANGE MEAL NUMBER",
+  "ipAddress" : "0:0:0:0:0:0:0:1",
+  "userAgent" : null
+}
+
+{
+  "timestamp" : "2025-10-26T09:45:23.767Z",
+  "eventType" : "SUCCESSFULL CHANGE",
+  "category" : "MEAL",
+  "eventId" : "1761471923767-236",
+  "user" : "nikola.milivojevic.555@gmail.com",
+  "role" : "STUDENT",
+  "result" : "SUCCESS",
+  "message" : "SUCCESSFULL CHANGE MEAL NUMBER",
+  "ipAddress" : "0:0:0:0:0:0:0:1",
+  "userAgent" : null
+}
+
+{
+  "timestamp" : "2025-10-26T09:47:43.395Z",
+  "eventType" : "SUCCESSFULL CHANGE",
+  "category" : "MEAL",
+  "eventId" : "1761472063395-85",
+  "user" : "nikola.milivojevic.555@gmail.com",
+  "role" : "STUDENT",
+  "result" : "SUCCESS",
+  "message" : "SUCCESSFULL CHANGE MEAL NUMBER",
+  "ipAddress" : "0:0:0:0:0:0:0:1",
+  "userAgent" : null
+}

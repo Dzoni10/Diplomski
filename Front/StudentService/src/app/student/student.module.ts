@@ -10,13 +10,15 @@ import { ProfileComponent } from './profile/profile.component';
 import { FacultyComponent } from './faculty/faculty.component';
 import { MatSelectModule} from '@angular/material/select'
 import { FormsModule } from '@angular/forms';
+import { StudentMealComponent } from './student-meal/student-meal.component';
 
 
 @NgModule({
   declarations: [
     StudentDormitoryAccessComponent,
     ProfileComponent,
-    FacultyComponent
+    FacultyComponent,
+    StudentMealComponent
   ],
   imports: [
     CommonModule,

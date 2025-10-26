@@ -6,6 +6,7 @@ import { AuthService } from '../auth/auth.service';
 import { SubjectFaculty } from '../subject/model/SubjectFaculty.model';
 import { StudentProfile } from './model/StudentProfile.model';
 import { StudentFaculty } from './model/StudentFaculty.model';
+import { StudentMeal } from './model/StudentMeal.model';
 @Injectable({
   providedIn: 'root'
 })
@@ -15,7 +16,11 @@ export class StudentService {
 
   constructor(private http: HttpClient,private authService: AuthService) { }
 
-  
+getStudentMealInfo(studentId: number): Observable<StudentMeal> {
+  return this.http.get<StudentMeal>(`${this.apiUrl}/meal-info/${studentId}`, {
+    headers: this.getAuthHeaders()
+  });
+}
 
 getAllFacultyStudents(): Observable<StudentFaculty[]> {
   return this.http.get<StudentFaculty[]>(`${this.apiUrl}/faculty/students`,{headers:this.getAuthHeaders()});
@@ -38,7 +43,11 @@ getUnpassedSubjects(email: string): Observable<SubjectFaculty[]> {
 }
 
 getStudentProfile(email: string): Observable<StudentProfile> {
-  return this.http.get<StudentProfile>(`${this.apiUrl}/profile/${email}`);
+  return this.http.get<StudentProfile>(`${this.apiUrl}/profile/${email}`,{headers:this.getAuthHeaders()});
+}
+
+changeMealNumber(change: StudentMeal):Observable<any>{
+  return this.http.put(`${this.apiUrl}/changeMealNumber`,change,{headers:this.getAuthHeaders()});
 }
 
 private getAuthHeaders(): HttpHeaders {

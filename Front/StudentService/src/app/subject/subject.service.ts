@@ -34,9 +34,6 @@ getAllSubjects(): Observable<SubjectFaculty[]> {
   return this.http.get<SubjectFaculty[]>(`${this.apiUrl}/subject/subjects`, { headers: this.getAuthHeaders() });
 }
 
-
-
-  
 private getAuthHeaders(): HttpHeaders {
     const token = this.authService.getToken();
     let headers = new HttpHeaders();

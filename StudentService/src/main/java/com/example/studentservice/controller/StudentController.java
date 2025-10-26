@@ -5,6 +5,7 @@ import com.example.studentservice.domain.Subject;
 import com.example.studentservice.domain.User;
 import com.example.studentservice.dto.StudentDormitoryDTO;
 import com.example.studentservice.dto.StudentFacultyDTO;
+import com.example.studentservice.dto.StudentMealDTO;
 import com.example.studentservice.dto.StudentProfileDTO;
 import com.example.studentservice.service.CustomLoggerService;
 import com.example.studentservice.service.StudentService;
@@ -78,6 +79,49 @@ public class StudentController {
             return new ResponseEntity<>("Successfull change dormitory status", HttpStatus.OK);
     }
 
+    @PutMapping("/changeMealNumber")
+    public ResponseEntity<?> changeMealNumber(@RequestBody @Validated StudentMealDTO studentMealDTO, HttpServletRequest request) {
+
+        String ipAddress = getClientIpAddress(request);
+
+        if(studentMealDTO==null)
+        {
+            loggerService.logChangeMealNumberEvent(
+                    "FAILED_CHANGE",
+                    studentMealDTO.email,
+                    "STUDENT",
+                    "FAILURE",
+                    "CANNOT CHANGE MEAL NUMBER",
+                    ipAddress
+            );
+            return new ResponseEntity<>("Unsuccessful change meal number", HttpStatus.INTERNAL_SERVER_ERROR);
+        }
+        User user = userService.findByEmail(studentMealDTO.email);
+
+        if (user == null) {
+            return ResponseEntity.status(HttpStatus.NOT_FOUND)
+                    .body(Map.of("message", "Unsuccessful change student status"));
+        }
+
+        Student student = (Student) user;
+        student.setBreakfast(studentMealDTO.breakfast);
+        student.setLunch(studentMealDTO.lunch);
+        student.setDinner(studentMealDTO.dinner);
+        student.setMoney(studentMealDTO.money);
+
+        userService.save(student);
+
+        loggerService.logChangeMealNumberEvent(
+                "SUCCESSFULL CHANGE",
+                studentMealDTO.email,
+                "STUDENT",
+                "SUCCESS",
+                "SUCCESSFULL CHANGE MEAL NUMBER",
+                ipAddress
+        );
+        return ResponseEntity.ok(Map.of("message", "Successfull change meal number"));
+    }
+
 
     @GetMapping("/faculty/students")
     public ResponseEntity<?> getAllStudentsWithPassedSubjects() {
@@ -112,7 +156,7 @@ public class StudentController {
 
         if (user == null) {
             return ResponseEntity.status(HttpStatus.NOT_FOUND)
-                    .body(Map.of("message", "Unsuccessful change student status"));
+                    .body(Map.of("message", "User not found"));
         }
 
         Student student = (Student) user;
@@ -133,12 +177,15 @@ public class StudentController {
         return ResponseEntity.ok(Map.of("message", "Successfull change student status"));
     }
 
-
-
     @GetMapping("/unpassed/{email}")
     public ResponseEntity<List<Subject>> getUnpassedSubjects(@PathVariable String email) {
         List<Subject> unpassed = studentService.getUnpassedSubjects(email);
         return new ResponseEntity<>(unpassed, HttpStatus.OK);
+    }
+
+    @GetMapping("/meal-info/{id}")
+    public ResponseEntity<StudentMealDTO> getStudentMealInfo(@PathVariable int id) {
+        return ResponseEntity.ok(studentService.getStudentMealInfo(id));
     }
 
     private String getClientIpAddress(HttpServletRequest request) {
@@ -148,5 +195,4 @@ public class StudentController {
         }
         return ipAddress;
     }
-
 }

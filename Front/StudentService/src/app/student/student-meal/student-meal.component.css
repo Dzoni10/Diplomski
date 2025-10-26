@@ -1,0 +1,41 @@
+.meal-container {
+  max-width: 700px;
+  margin: 30px auto;
+  padding: 20px;
+  border-radius: 16px;
+  background-color: #fff;
+}
+
+.meals {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 20px;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.meal-card {
+  width: 180px;
+  text-align: center;
+  border-radius: 16px;
+}
+
+.price {
+  font-size: 1.4em;
+  font-weight: bold;
+  margin: 10px 0;
+}
+
+.counter {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  margin-top: 8px;
+}
+
+.actions {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}

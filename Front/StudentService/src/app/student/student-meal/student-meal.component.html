@@ -1,0 +1,31 @@
+<div class="meal-container mat-elevation-z4" *ngIf="student">
+  <h2>{{ student.name }} {{ student.surname }}</h2>
+  <p><strong>Budžet:</strong> {{ student.budget ? 'DA' : 'NE' }}</p>
+  <p><strong>Stanje:</strong> {{ student.money | currency:'RSD':'code':'1.0-0' }}</p>
+  <p><strong>Dorucak:</strong> {{ student.breakfast}}</p>
+  <p><strong>Rucak:</strong> {{ student.lunch}}</p>
+  <p><strong>Vecera:</strong> {{ student.dinner}}</p>
+
+  <div class="meals">
+    <mat-card class="meal-card" *ngFor="let meal of meals">
+      <mat-card-header>
+        <mat-card-title>
+          {{ meal === 'breakfast' ? 'Doručak' : meal === 'lunch' ? 'Ručak' : 'Večera' }}
+        </mat-card-title>
+      </mat-card-header>
+
+      <mat-card-content>
+        <div class="price">{{ getPrice(meal) | currency:'RSD':'symbol':'1.0-0' }}</div>
+        <div class="counter">
+          <button mat-mini-fab color="primary" (click)="decrement(meal)">-</button>
+          <span>{{ mealCounts[meal] }}</span>
+          <button mat-mini-fab color="primary" (click)="increment(meal)" [disabled]="isMealDisabled(meal)">+</button>
+        </div>
+      </mat-card-content>
+    </mat-card>
+  </div>
+
+  <div class="actions">
+    <button mat-raised-button color="accent" (click)="buyMeals()">Kupi</button>
+  </div>
+</div>

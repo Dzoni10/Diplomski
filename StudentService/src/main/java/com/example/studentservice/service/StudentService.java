@@ -5,6 +5,7 @@ import com.example.studentservice.domain.Subject;
 import java.util.stream.Collectors;
 import com.example.studentservice.dto.StudentDormitoryDTO;
 import com.example.studentservice.dto.StudentFacultyDTO;
+import com.example.studentservice.dto.StudentMealDTO;
 import com.example.studentservice.dto.StudentProfileDTO;
 import com.example.studentservice.repositoryInterfaces.StudentRepositoryInterface;
 import org.springframework.stereotype.Service;
@@ -78,5 +79,20 @@ public class StudentService {
                 .collect(Collectors.toList());
     }
 
+    public StudentMealDTO getStudentMealInfo(int studentId) {
+        Student s = studentRepository.findById(studentId)
+                .orElseThrow(() -> new RuntimeException("Student not found"));
+
+        return new StudentMealDTO(
+                s.getName(),
+                s.getSurname(),
+                s.getEmail(),
+                s.isBudget(),
+                s.getMoney(),
+                s.getBreakfast(),
+                s.getLunch(),
+                s.getDinner()
+        );
+    }
 
 }
