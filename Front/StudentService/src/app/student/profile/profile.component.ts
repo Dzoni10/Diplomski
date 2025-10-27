@@ -3,7 +3,6 @@ import { StudentProfile } from '../model/StudentProfile.model';
 import { StudentService } from '../student.service';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { AuthService } from 'src/app/auth/auth.service';
-import { User } from 'src/app/auth/model/User.model';
 import { SubjectFaculty } from 'src/app/subject/model/SubjectFaculty.model';
 
 @Component({

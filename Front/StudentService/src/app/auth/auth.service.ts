@@ -5,7 +5,6 @@ import { DecodedToken } from './model/decodedToken.model';
 import { Register } from './model/Register.model';
 import { AuthResponse } from './model/AuthResponse';
 import { jwtDecode } from 'jwt-decode';
-import { User } from './model/User.model';
 import { StudentProfile } from '../student/model/StudentProfile.model';
 
 @Injectable({

@@ -33,7 +33,4 @@ public class ProfessorSubjectService {
         return "Profesor je uspesno dodeljen na predmet";
     }
 
-
-
-
 }

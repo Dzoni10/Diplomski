@@ -3,8 +3,6 @@ import { HttpInterceptor, HttpRequest, HttpHandler, HttpEvent } from '@angular/c
 import { AuthService } from "../auth.service";
 import { Observable } from "rxjs";
 
-
-
 @Injectable()
 export class AuthInterceptor implements HttpInterceptor{
 

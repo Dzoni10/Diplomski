@@ -24,15 +24,6 @@ public class StudentService {
         return studentRepository.findAllStudentDormitoryInfo();
     }
 
-    public StudentProfileDTO getStudentProfile(String email) {
-        StudentProfileDTO dto = studentRepository.findStudentProfileByEmail(email);
-        if (dto != null) {
-            Student student = studentRepository.findStudentByEmail(email); // ako imaš ovu metodu
-            dto.passedSubjects = student.getPassedSubjects(); // dodaj ručno
-        }
-        return dto;
-    }
-
     public List<Subject> getUnpassedSubjects(String email) {
         return studentRepository.findUnpassedSubjectsByEmail(email);
     }

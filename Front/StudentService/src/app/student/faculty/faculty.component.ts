@@ -3,7 +3,6 @@ import {MatTableDataSource} from '@angular/material/table';
 import { StudentFaculty } from '../model/StudentFaculty.model';
 import { StudentService } from '../student.service';
 import { MatSnackBar } from '@angular/material/snack-bar';
-import { MatSelect } from '@angular/material/select';
 
 @Component({
   selector: 'app-faculty',
