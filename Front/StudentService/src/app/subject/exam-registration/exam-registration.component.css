@@ -1,0 +1,29 @@
+.exam-container {
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.student-info {
+  display: flex;
+  justify-content: center;
+}
+
+.tables-container {
+  display: flex;
+  justify-content: space-between;
+  gap: 2rem;
+}
+
+.table-section {
+  flex: 1;
+}
+
+table {
+  width: 100%;
+}
+
+.mt-3 {
+  margin-top: 1rem;
+}

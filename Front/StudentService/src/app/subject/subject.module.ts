@@ -12,7 +12,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatButtonModule } from '@angular/material/button';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { ProfessorSubjectListComponent } from './professor-subject-list/professor-subject-list.component';
-
+import {MatCheckboxModule} from '@angular/material/checkbox'
 
 
 @NgModule({
@@ -32,7 +32,8 @@ import { ProfessorSubjectListComponent } from './professor-subject-list/professo
     ReactiveFormsModule,
     MatButtonModule,
     MatSnackBarModule,
-    FormsModule
+    FormsModule,
+    MatCheckboxModule
   ]
 })
 export class SubjectModule { }

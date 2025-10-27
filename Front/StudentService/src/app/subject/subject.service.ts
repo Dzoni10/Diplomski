@@ -5,6 +5,8 @@ import { Observable } from 'rxjs';
 import { SubjectFaculty } from './model/SubjectFaculty.model';
 import { Professor } from './model/Professor.model';
 import { ProfessorSubjectList } from './model/ProfessorSubjectList.model';
+import { StudentExamInfo } from './model/StudentExamInfo.model';
+import { ExamRegistration } from './model/ExamRegistration.model';
 
 @Injectable({
   providedIn: 'root'
@@ -33,6 +35,22 @@ getAllProfessors(): Observable<Professor[]> {
 getAllSubjects(): Observable<SubjectFaculty[]> {
   return this.http.get<SubjectFaculty[]>(`${this.apiUrl}/subject/subjects`, { headers: this.getAuthHeaders() });
 }
+
+getStudentInfo(studentId: number): Observable<StudentExamInfo> {
+    return this.http.get<StudentExamInfo>(`${this.apiUrl}/exams/info/${studentId}`);
+}
+
+getAvailableSubjects(studentId: number): Observable<ExamRegistration[]> {
+    return this.http.get<ExamRegistration[]>(`${this.apiUrl}/exams/available/${studentId}`);
+}
+
+registerExams(studentId: number, subjectIds: number[]): Observable<void> {
+    return this.http.post<void>(`${this.apiUrl}/exams/register/${studentId}`, subjectIds);
+}
+
+unregisterExams(studentId: number, subjectIds: number[]): Observable<void> {
+    return this.http.post<void>(`${this.apiUrl}/exams/unregister/${studentId}`, subjectIds);
+  }
 
 private getAuthHeaders(): HttpHeaders {
     const token = this.authService.getToken();
