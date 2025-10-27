@@ -12,6 +12,7 @@ import { ProfessorSubjectListComponent } from './subject/professor-subject-list/
 import { StudentMealComponent } from './student/student-meal/student-meal.component';
 import { FinanceCardComponent } from './student/finance-card/finance-card.component';
 import { DormitoryPaymentComponent } from './student/dormitory-payment/dormitory-payment.component';
+import { DormitoryStudentPaymentsComponent } from './student/dormitory-student-payments/dormitory-student-payments.component';
 
 const routes: Routes = [
    { path: 'login', component: LoginComponent },
@@ -25,7 +26,8 @@ const routes: Routes = [
    { path: 'profesor-subject-list', component: ProfessorSubjectListComponent},
    { path: 'student-meal', component: StudentMealComponent},
    { path: 'finance-card', component: FinanceCardComponent},
-   { path: 'dormitory-payment', component:DormitoryPaymentComponent}
+   { path: 'dormitory-payment', component:DormitoryPaymentComponent},
+   { path: 'dormitory-student-payments', component:DormitoryStudentPaymentsComponent}
 
 ];
 

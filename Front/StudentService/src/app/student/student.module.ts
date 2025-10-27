@@ -14,6 +14,7 @@ import { StudentMealComponent } from './student-meal/student-meal.component';
 import { FinanceCardComponent } from './finance-card/finance-card.component';
 import { DormitoryPaymentComponent } from './dormitory-payment/dormitory-payment.component';
 import { MatInputModule } from '@angular/material/input';
+import { DormitoryStudentPaymentsComponent } from './dormitory-student-payments/dormitory-student-payments.component';
 
 
 @NgModule({
@@ -23,7 +24,8 @@ import { MatInputModule } from '@angular/material/input';
     FacultyComponent,
     StudentMealComponent,
     FinanceCardComponent,
-    DormitoryPaymentComponent
+    DormitoryPaymentComponent,
+    DormitoryStudentPaymentsComponent
   ],
   imports: [
     CommonModule,

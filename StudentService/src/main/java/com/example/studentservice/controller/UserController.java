@@ -94,6 +94,7 @@ public class UserController {
         savedUser.setBreakfast(0);
         savedUser.setLunch(0);
         savedUser.setDinner(0);
+        savedUser.setPayed(false);
 
         UserDTO userDTO = new UserDTO(savedUser);
         System.out.println(userDTO.name + userDTO.email);

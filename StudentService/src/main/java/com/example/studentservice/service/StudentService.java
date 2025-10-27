@@ -58,6 +58,22 @@ public class StudentService {
         );
     }
 
+    public List<StudentDormitoryPaymentDTO> getAllStudentsDormitoryPayment() {
+        return studentRepository.findAll().stream()
+                .sorted((a, b) -> Boolean.compare(!a.isPayed(), !b.isPayed())) // true ide pre false
+                .map(s -> new StudentDormitoryPaymentDTO(
+                        s.getId(),
+                        s.getName(),
+                        s.getSurname(),
+                        s.getEmail(),
+                        s.getYear(),
+                        s.getMoney(),
+                        s.getStudyType(),
+                        s.isPayed()
+                ))
+                .collect(Collectors.toList());
+    }
+
     public List<StudentFacultyDTO> getAllStudentsWithPassedSubjects() {
         List<Student> students = studentRepository.findAllWithPassedSubjects();
 
@@ -109,6 +125,16 @@ public class StudentService {
                 s.getLunch(),
                 s.getDinner()
         );
+    }
+
+    public void resetDormPayments() {
+        List<Student> students = studentRepository.findAll();
+        for (Student s : students) {
+            if (s.isPayed()) {
+                s.setPayed(false);
+            }
+        }
+        studentRepository.saveAll(students);
     }
 
 }

@@ -56,8 +56,11 @@ public class Student  extends User{
     @Column(name="dinner")
     private int dinner;
 
+    @Column(name="payed")
+    private boolean payed;
+
     public Student(){}
-    public Student(String name, String surname,String email,String password,boolean isVerified,String index, int year, double averageGrade,boolean budget,double money,StudyType studyType,DormitoryStatus dormitoryStatus,int breakfast,int lunch,int dinner) {
+    public Student(String name, String surname,String email,String password,boolean isVerified,String index, int year, double averageGrade,boolean budget,double money,StudyType studyType,DormitoryStatus dormitoryStatus,int breakfast,int lunch,int dinner,boolean payed) {
         super(name,surname,email,password, Role.STUDENT,isVerified);
         this.index=index;
         this.year=year;
@@ -69,6 +72,7 @@ public class Student  extends User{
         this.breakfast=breakfast;
         this.lunch=lunch;
         this.dinner=dinner;
+        this.payed=payed;
     }
 
     public String getIndex() {
@@ -163,5 +167,13 @@ public class Student  extends User{
 
     public void setDinner(int dinner) {
         this.dinner = dinner;
+    }
+
+    public boolean isPayed() {
+        return payed;
+    }
+
+    public void setPayed(boolean payed) {
+        this.payed = payed;
     }
 }

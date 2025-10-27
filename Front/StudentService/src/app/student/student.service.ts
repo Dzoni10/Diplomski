@@ -8,6 +8,7 @@ import { StudentProfile } from './model/StudentProfile.model';
 import { StudentFaculty } from './model/StudentFaculty.model';
 import { StudentMeal } from './model/StudentMeal.model';
 import { StudentDeposit } from './model/StudentDeposit.mode';
+import { StudentDormitoryPayment } from './model/StudentDormitoryPayment.model';
 @Injectable({
   providedIn: 'root'
 })
@@ -58,6 +59,15 @@ depositMoney(data: StudentDeposit){
 getCurrentAmount(id: number): Observable<StudentDeposit>{
   return this.http.get<StudentDeposit>(`${this.apiUrl}/getCurrentDeposit/${id}`,{headers:this.getAuthHeaders()});
 }
+
+getAllStudentDormitoryPayment(): Observable<StudentDormitoryPayment[]> {
+  return this.http.get<StudentDormitoryPayment[]>(`${this.apiUrl}/dorm-payments`,{headers:this.getAuthHeaders()});
+}
+
+resetDormPayments(): Observable<void> {
+    return this.http.post<void>(`${this.apiUrl}/reset-dormitory-payments`, {},{headers:this.getAuthHeaders()});
+}
+
 
 private getAuthHeaders(): HttpHeaders {
     const token = this.authService.getToken();

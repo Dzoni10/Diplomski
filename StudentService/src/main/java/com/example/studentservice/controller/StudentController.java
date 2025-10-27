@@ -149,6 +149,57 @@ public class StudentController {
         }
     }
 
+    @GetMapping("/dorm-payments")
+    public ResponseEntity<List<StudentDormitoryPaymentDTO>> getAllDormPayments() {
+        List<StudentDormitoryPaymentDTO> payments = studentService.getAllStudentsDormitoryPayment();
+        return ResponseEntity.ok(payments);
+    }
+
+    @PostMapping("/reset-dormitory-payments")
+    public void resetDormPayments() {
+        studentService.resetDormPayments();
+    }
+
+    @PutMapping("/pay-dorm")
+    public ResponseEntity<?> payDorm(@RequestBody StudentDormitoryPaymentDTO dto,HttpServletRequest request) {
+        String ipAddress = getClientIpAddress(request);
+
+        if(dto==null) {
+
+            loggerService.logDormitoryPaymentEvent(
+                    "UNSUCCESSFULL PAMYMENT",
+                    dto.email,
+                    "STUDENT",
+                    "FAILED",
+                    "UNSUCCESSFULL PAYMENT",
+                    ipAddress
+            );
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR)
+                    .body(Map.of("message", "Unsuccessful payment"));
+        }
+
+        User user = userService.findByEmail(dto.email);
+
+        if (user == null) {
+            return ResponseEntity.status(HttpStatus.NOT_FOUND)
+                    .body(Map.of("message", "Unsuccessful change student status"));
+        }
+
+        Student student = (Student) user;
+        student.setPayed(true);
+        student.setMoney(dto.money);
+        userService.save(student);
+
+        loggerService.logDormitoryPaymentEvent(
+                "SUCCESSFULL PAMYMENT",
+                dto.email,
+                "STUDENT",
+                "SUCCESS",
+                "SUCCESSFULL PAYMENT",
+                ipAddress
+        );
+        return ResponseEntity.ok(Map.of("message", "Successfull dormitory payment"));
+    }
 
     @GetMapping("/faculty/students")
     public ResponseEntity<?> getAllStudentsWithPassedSubjects() {
@@ -160,8 +211,6 @@ public class StudentController {
                     .body("Error fetching students with passed subjects: " + e.getMessage());
         }
     }
-
-
 
     @PutMapping("/changeFacultyStatus")
     public ResponseEntity<?> changeFacultyStatus(@RequestBody @Validated StudentFacultyDTO studentFacultyDTO, HttpServletRequest request) {
