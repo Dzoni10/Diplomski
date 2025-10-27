@@ -64,8 +64,16 @@ getAllStudentDormitoryPayment(): Observable<StudentDormitoryPayment[]> {
   return this.http.get<StudentDormitoryPayment[]>(`${this.apiUrl}/dorm-payments`,{headers:this.getAuthHeaders()});
 }
 
+getStudentDormitoryPayment(id:number): Observable<StudentDormitoryPayment>{
+  return this.http.get<StudentDormitoryPayment>(`${this.apiUrl}/studentDormitoryPayment/${id}`,{headers:this.getAuthHeaders()});
+}
+
 resetDormPayments(): Observable<void> {
     return this.http.post<void>(`${this.apiUrl}/reset-dormitory-payments`, {},{headers:this.getAuthHeaders()});
+}
+
+payDorm(change: StudentDormitoryPayment): Observable<any> {
+    return this.http.put(`${this.apiUrl}/pay-dorm`,change, {headers:this.getAuthHeaders()});
 }
 
 

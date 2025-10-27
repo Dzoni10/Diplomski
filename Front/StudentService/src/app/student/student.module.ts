@@ -15,7 +15,7 @@ import { FinanceCardComponent } from './finance-card/finance-card.component';
 import { DormitoryPaymentComponent } from './dormitory-payment/dormitory-payment.component';
 import { MatInputModule } from '@angular/material/input';
 import { DormitoryStudentPaymentsComponent } from './dormitory-student-payments/dormitory-student-payments.component';
-
+import {MatDividerModule} from '@angular/material/divider'
 
 @NgModule({
   declarations: [
@@ -37,7 +37,8 @@ import { DormitoryStudentPaymentsComponent } from './dormitory-student-payments/
     MatSelectModule,
     FormsModule,
     ReactiveFormsModule,
-    MatInputModule
+    MatInputModule,
+    MatDividerModule
   ]
 })
 export class StudentModule { }

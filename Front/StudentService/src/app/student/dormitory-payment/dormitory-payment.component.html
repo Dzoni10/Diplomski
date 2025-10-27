@@ -1,1 +1,30 @@
-<p>dormitory-payment works!</p>
+<div class="home-payment-container mat-elevation-z4" *ngIf="student">
+
+  <h2>Uplata stanarine doma</h2>
+
+  <mat-card>
+    <mat-card-content>
+      <div class="info">
+        <p><strong>Ime:</strong> {{ student.name }}</p>
+        <p><strong>Prezime:</strong> {{ student.surname }}</p>
+        <p><strong>Tip studija:</strong> {{ student.studyType }}</p>
+        <p><strong>Trenutno stanje:</strong> {{ student.money | number:'1.0-0' }} RSD</p>
+      </div>
+
+      <mat-divider></mat-divider>
+
+      <div class="price">
+        <p><strong>Cena doma:</strong> {{ homePrice | number:'1.0-0' }} RSD</p>
+      </div>
+
+      <div class="actions">
+        <button mat-raised-button color="primary"
+                (click)="payDormitory()"
+                [disabled]="student.payed">
+          {{ student.payed ? 'Dom već plaćen' : 'Plati dom' }}
+        </button>
+      </div>
+    </mat-card-content>
+  </mat-card>
+
+</div>

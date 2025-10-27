@@ -111,6 +111,12 @@ public class StudentService {
         return new StudentDepositDTO(s.getId(),s.getMoney());
     }
 
+    public StudentDormitoryPaymentDTO getStudentPaymentDormitory(int studentId){
+        Student s = studentRepository.findById(studentId).orElseThrow(()->new RuntimeException("Student not found"));
+
+        return new StudentDormitoryPaymentDTO(s.getId(),s.getName(),s.getSurname(),s.getEmail(),s.getYear(),s.getMoney(),s.getStudyType(),s.isPayed());
+    }
+
     public StudentMealDTO getStudentMealInfo(int studentId) {
         Student s = studentRepository.findById(studentId)
                 .orElseThrow(() -> new RuntimeException("Student not found"));

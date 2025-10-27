@@ -149,6 +149,17 @@ public class StudentController {
         }
     }
 
+    @GetMapping("/studentDormitoryPayment/{id}")
+    public ResponseEntity<?> getStudentDormitoryPayment(@PathVariable int id) {
+        try {
+            StudentDormitoryPaymentDTO student = studentService.getStudentPaymentDormitory(id);
+            return ResponseEntity.ok(student);
+        } catch (Exception e) {
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR)
+                    .body("Error finding student deposit " + e.getMessage());
+        }
+    }
+
     @GetMapping("/dorm-payments")
     public ResponseEntity<List<StudentDormitoryPaymentDTO>> getAllDormPayments() {
         List<StudentDormitoryPaymentDTO> payments = studentService.getAllStudentsDormitoryPayment();
@@ -165,7 +176,6 @@ public class StudentController {
         String ipAddress = getClientIpAddress(request);
 
         if(dto==null) {
-
             loggerService.logDormitoryPaymentEvent(
                     "UNSUCCESSFULL PAMYMENT",
                     dto.email,

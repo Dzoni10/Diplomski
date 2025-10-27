@@ -10,3 +10,81 @@
   "ipAddress" : "0:0:0:0:0:0:0:1",
   "userAgent" : "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36"
 }
+
+{
+  "timestamp" : "2025-10-27T12:57:30.351Z",
+  "eventType" : "LOGIN_SUCCESS",
+  "category" : "AUTHENTICATION",
+  "eventId" : "1761569850351-644",
+  "user" : "nikola.milivojevic.555@gmail.com",
+  "role" : "STUDENT",
+  "result" : "SUCCESS",
+  "message" : "User logged in successfully",
+  "ipAddress" : "0:0:0:0:0:0:0:1",
+  "userAgent" : "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36"
+}
+
+{
+  "timestamp" : "2025-10-27T13:05:02.751Z",
+  "eventType" : "SUCCESSFULL PAMYMENT",
+  "category" : "DORMITORY_PAYMENT",
+  "eventId" : "1761570302751-577",
+  "user" : "nikola.milivojevic.555@gmail.com",
+  "role" : "STUDENT",
+  "result" : "SUCCESS",
+  "message" : "SUCCESSFULL PAYMENT",
+  "ipAddress" : "0:0:0:0:0:0:0:1",
+  "userAgent" : null
+}
+
+{
+  "timestamp" : "2025-10-27T13:05:26.577Z",
+  "eventType" : "LOGIN_SUCCESS",
+  "category" : "AUTHENTICATION",
+  "eventId" : "1761570326577-254",
+  "user" : "scns@gmail.com",
+  "role" : "ADMINSCNS",
+  "result" : "SUCCESS",
+  "message" : "User logged in successfully",
+  "ipAddress" : "0:0:0:0:0:0:0:1",
+  "userAgent" : "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36"
+}
+
+{
+  "timestamp" : "2025-10-27T13:05:45.261Z",
+  "eventType" : "LOGIN_SUCCESS",
+  "category" : "AUTHENTICATION",
+  "eventId" : "1761570345261-616",
+  "user" : "nikola.milivojevic.555@gmail.com",
+  "role" : "STUDENT",
+  "result" : "SUCCESS",
+  "message" : "User logged in successfully",
+  "ipAddress" : "0:0:0:0:0:0:0:1",
+  "userAgent" : "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36"
+}
+
+{
+  "timestamp" : "2025-10-27T13:05:49.300Z",
+  "eventType" : "SUCCESSFULL PAMYMENT",
+  "category" : "DORMITORY_PAYMENT",
+  "eventId" : "1761570349300-361",
+  "user" : "nikola.milivojevic.555@gmail.com",
+  "role" : "STUDENT",
+  "result" : "SUCCESS",
+  "message" : "SUCCESSFULL PAYMENT",
+  "ipAddress" : "0:0:0:0:0:0:0:1",
+  "userAgent" : null
+}
+
+{
+  "timestamp" : "2025-10-27T13:06:00.630Z",
+  "eventType" : "SUCCESSFULL CHANGE",
+  "category" : "MEAL",
+  "eventId" : "1761570360630-517",
+  "user" : "nikola.milivojevic.555@gmail.com",
+  "role" : "STUDENT",
+  "result" : "SUCCESS",
+  "message" : "SUCCESSFULL CHANGE MEAL NUMBER",
+  "ipAddress" : "0:0:0:0:0:0:0:1",
+  "userAgent" : null
+}

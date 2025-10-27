@@ -1,0 +1,43 @@
+.home-payment-container {
+  max-width: 450px;
+  margin: 40px auto;
+  padding: 24px;
+  text-align: center;
+  border-radius: 16px;
+  background: #fff;
+
+  h2 {
+    margin-bottom: 24px;
+    font-weight: 600;
+  }
+
+  mat-card {
+    border-radius: 16px;
+    padding: 12px;
+  }
+
+  .info {
+    text-align: left;
+    margin-bottom: 16px;
+
+    p {
+      margin: 6px 0;
+      font-size: 15px;
+    }
+  }
+
+  .price {
+    margin-top: 16px;
+    font-size: 17px;
+    font-weight: 500;
+  }
+
+  .actions {
+    margin-top: 24px;
+
+    button {
+      border-radius: 12px;
+      padding: 8px 24px;
+    }
+  }
+}
