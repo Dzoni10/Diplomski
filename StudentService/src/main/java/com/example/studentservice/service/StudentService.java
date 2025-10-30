@@ -1,12 +1,15 @@
 package com.example.studentservice.service;
 
+import com.example.studentservice.domain.ExamResult;
 import com.example.studentservice.domain.Student;
 import com.example.studentservice.domain.Subject;
 import java.util.stream.Collectors;
 
 import com.example.studentservice.dto.*;
+import com.example.studentservice.repositoryInterfaces.ExamResultRepositoryInterface;
 import com.example.studentservice.repositoryInterfaces.StudentRepositoryInterface;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 import java.util.NoSuchElementException;
@@ -16,8 +19,11 @@ public class StudentService {
 
     private final StudentRepositoryInterface studentRepository;
 
-    public StudentService(StudentRepositoryInterface studentRepository) {
+    private final ExamResultRepositoryInterface examResultRepository;
+
+    public StudentService(StudentRepositoryInterface studentRepository, ExamResultRepositoryInterface examResultRepository) {
         this.studentRepository = studentRepository;
+        this.examResultRepository = examResultRepository;
     }
 
     public List<StudentDormitoryDTO> getAllStudentsDormitoryInfo() {
@@ -28,12 +34,31 @@ public class StudentService {
         return studentRepository.findUnpassedSubjectsByEmail(email);
     }
 
+    @Transactional
     public StudentProfileDTO getStudentProfileById(int id) {
         Student student = studentRepository.findByIdWithPassedSubjects(id);
 
         if (student == null) {
             throw new NoSuchElementException("Student with id " + id + " not found");
         }
+
+        List<ExamResult> examResults = examResultRepository.findByStudentId(id);
+
+        // Mapiraj Subject-e u PassedSubjectDTO-e
+        List<PassedSubjectWithGradeDTO> passedSubjectDTOs = examResults.stream()
+
+                        .map(s -> new PassedSubjectWithGradeDTO(
+                                s.getSubject().getId(),
+                                s.getSubject().getName(),
+                                s.getSubject().getEspb(),
+                                s.getSubject().getYear(),
+                                s.getSubject().getSemester(),
+                                s.getSubject().getField(),
+                                s.getPoints(),
+                                s.getGrade(),
+                                s.getProfessor().getName()+" "+s.getProfessor().getSurname()
+                        ))
+                        .toList();
 
         return new StudentProfileDTO(
                 student.getName(),
@@ -45,7 +70,7 @@ public class StudentService {
                 student.getAverageGrade(),
                 student.getStudyType(),
                 student.getDormitoryStatus(),
-                student.getPassedSubjects()
+                passedSubjectDTOs
         );
     }
 
@@ -123,6 +148,22 @@ public class StudentService {
                 s.getDinner()
         );
     }
+
+//    @Transactional
+//    public List<PassedExamDTO> getPassedExams(int studentId) {
+//        List<ExamResult> results = examResultRepository.findByStudentId(studentId);
+//
+//        return results.stream()
+//                .map(r -> new PassedExamDTO(
+//                        r.getSubject().getName(),
+//                        r.getSubject().getEspb(),
+//                        r.getSubject().getYear(),
+//                        r.getPoints(),
+//                        r.getGrade(),
+//                        r.getProfessor().getName() + " " + r.getProfessor().getSurname()
+//                ))
+//                .collect(Collectors.toList());
+//    }
 
     public void resetDormPayments() {
         List<Student> students = studentRepository.findAll();

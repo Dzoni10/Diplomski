@@ -13,6 +13,7 @@ import { StudentMealComponent } from './student/student-meal/student-meal.compon
 import { FinanceCardComponent } from './student/finance-card/finance-card.component';
 import { DormitoryPaymentComponent } from './student/dormitory-payment/dormitory-payment.component';
 import { DormitoryStudentPaymentsComponent } from './student/dormitory-student-payments/dormitory-student-payments.component';
+import { SubjectDetailsComponent } from './subject/subject-details/subject-details.component';
 
 const routes: Routes = [
    { path: 'login', component: LoginComponent },
@@ -27,7 +28,8 @@ const routes: Routes = [
    { path: 'student-meal', component: StudentMealComponent},
    { path: 'finance-card', component: FinanceCardComponent},
    { path: 'dormitory-payment', component:DormitoryPaymentComponent},
-   { path: 'dormitory-student-payments', component:DormitoryStudentPaymentsComponent}
+   { path: 'dormitory-student-payments', component:DormitoryStudentPaymentsComponent},
+   { path: 'subject-details/:id', component: SubjectDetailsComponent },
 
 ];
 

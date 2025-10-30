@@ -276,6 +276,11 @@ public class StudentController {
         return ResponseEntity.ok(studentService.getStudentMealInfo(id));
     }
 
+//    @GetMapping("/passed-exams/{id}")
+//    public ResponseEntity<List<PassedExamDTO>> getPassedExams(@PathVariable int id) {
+//        return ResponseEntity.ok(studentService.getPassedExams(id));
+//    }
+
     private String getClientIpAddress(HttpServletRequest request) {
         String ipAddress = request.getHeader("X-Forwarded-For");
         if (ipAddress == null || ipAddress.isEmpty()) {

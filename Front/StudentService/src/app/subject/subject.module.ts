@@ -12,7 +12,9 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatButtonModule } from '@angular/material/button';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { ProfessorSubjectListComponent } from './professor-subject-list/professor-subject-list.component';
-import {MatCheckboxModule} from '@angular/material/checkbox'
+import {MatCheckboxModule} from '@angular/material/checkbox';
+import { SubjectDetailsComponent } from './subject-details/subject-details.component'
+import { RouterModule } from '@angular/router';
 
 
 @NgModule({
@@ -20,7 +22,8 @@ import {MatCheckboxModule} from '@angular/material/checkbox'
     ProfesorSubjectComponent,
     ExamRegistrationComponent,
     AddProfesorComponent,
-    ProfessorSubjectListComponent
+    ProfessorSubjectListComponent,
+    SubjectDetailsComponent
   ],
   imports: [
     CommonModule,
@@ -33,7 +36,8 @@ import {MatCheckboxModule} from '@angular/material/checkbox'
     MatButtonModule,
     MatSnackBarModule,
     FormsModule,
-    MatCheckboxModule
+    MatCheckboxModule,
+    RouterModule
   ]
 })
 export class SubjectModule { }

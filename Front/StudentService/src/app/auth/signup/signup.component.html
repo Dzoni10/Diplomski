@@ -16,7 +16,7 @@
 
     <mat-form-field>
       <mat-label>Indeks</mat-label>
-      <input matInput formControlName="index" type="text" maxlength="11" minlength="11"/>
+      <input matInput formControlName="index" type="text" maxlength="11" minlength="9"/>
       <mat-error *ngIf="hasError('surname')">{{ getErrorMessage('index') }}</mat-error>
     </mat-form-field>
 

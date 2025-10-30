@@ -3,7 +3,7 @@ import { StudentProfile } from '../model/StudentProfile.model';
 import { StudentService } from '../student.service';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { AuthService } from 'src/app/auth/auth.service';
-import { SubjectFaculty } from 'src/app/subject/model/SubjectFaculty.model';
+import { PassedSubjectWithGrade } from 'src/app/subject/model/PassedSubjectWithGrade.model';
 
 @Component({
   selector: 'app-profile',
@@ -13,8 +13,10 @@ import { SubjectFaculty } from 'src/app/subject/model/SubjectFaculty.model';
 export class ProfileComponent {
 
   
-  displayedColumns: string[] = ['name', 'espb', 'semester', 'field'];
+  displayedColumns: string[] = ['subjectName', 'espb', 'year','semester','points', 'grade','professorName'];
   studentProfile?: StudentProfile;
+  totalEspb: number = 0;
+  
 
   constructor(private authService: AuthService,private studentService: StudentService, private snackBar: MatSnackBar) {}
 
@@ -23,15 +25,21 @@ export class ProfileComponent {
     const id = currentUser?.userId // ili neki drugi izvor
     if(id===undefined) return;
     this.authService.getFullStudentById(id).subscribe({
-        next: (data)=>this.studentProfile=data,
+        next: (data)=>{
+          this.studentProfile=data
+          this.totalEspb = this.calculateEspb(this.studentProfile.passedSubjects);
+        },
         error:()=> this.snackBar.open('Greska pri ucitavanju studenta',"Close",{duration:3000})
     });
+
+    
   }
 
-  calculateEspb(passedSubjects: SubjectFaculty[]): number{
-    return passedSubjects.reduce((accumulator, subject) => {
-    return accumulator + subject.espb;
-  }, 0); 
+  calculateEspb(passedSubjects: PassedSubjectWithGrade[]): number{
+    if (!passedSubjects || passedSubjects.length === 0) {
+      return 0;
+    }
+    return passedSubjects.reduce((sum, subject) => sum + subject.espb, 0);
   }
 
   convertDormitoryStatus(status:string): string{

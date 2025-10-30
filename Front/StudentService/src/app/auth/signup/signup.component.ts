@@ -60,11 +60,19 @@ export class SignupComponent implements OnInit {
         Validators.required,
         Validators.minLength(9),
         Validators.maxLength(11),
-        Validators.pattern(/^(?:[A-Z]{2}|[A-Z][0-9])-(?:[1-9]|[1-9][0-9]|1[0-9]{2}|2[0-3][0-9]|240)-20(1[1-9]|[2-9][0-9])$/)
+        Validators.pattern(/^[A-Z]{2}-([1-9]|[1-9][0-9]|[1-9][0-9]{2})-20(1[1-9]|[2-9][0-9])$/)
       ]],
       studyType: ['', Validators.required]
     }, {
       validators: this.passwordMatchValidator
+    });
+
+    this.signupForm.get('index')?.valueChanges.subscribe(value => {
+      const control = this.signupForm.get('index');
+      console.log('Index vrednost:', value);
+      console.log('Index errors:', control?.errors);
+      console.log('Index valid:', control?.valid);
+      console.log('Index touched:', control?.touched);
     });
   }
 

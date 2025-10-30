@@ -18,6 +18,8 @@ import { StudentModule } from './student/student.module';
 import { SubjectModule } from './subject/subject.module';
 import { MatSelectModule } from '@angular/material/select';
 import { MatOptionModule } from '@angular/material/core';
+import { RouterModule } from '@angular/router';
+import { MatFormFieldModule } from '@angular/material/form-field';
 
 @NgModule({
   declarations: [
@@ -40,7 +42,9 @@ import { MatOptionModule } from '@angular/material/core';
     StudentModule,
     SubjectModule,
     MatSelectModule,
-    MatOptionModule
+    MatOptionModule,
+    RouterModule,
+    MatFormFieldModule
   ],
   providers: [
     {provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi:true}

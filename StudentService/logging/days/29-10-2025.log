@@ -1,0 +1,64 @@
+{
+  "timestamp" : "2025-10-28T23:18:32.049Z",
+  "eventType" : "LOGIN_SUCCESS",
+  "category" : "AUTHENTICATION",
+  "eventId" : "1761693512049-591",
+  "user" : "nikola.milivojevic.555@gmail.com",
+  "role" : "STUDENT",
+  "result" : "SUCCESS",
+  "message" : "User logged in successfully",
+  "ipAddress" : "0:0:0:0:0:0:0:1",
+  "userAgent" : "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36"
+}
+
+{
+  "timestamp" : "2025-10-28T23:19:23.567Z",
+  "eventType" : "LOGIN_FAILED",
+  "category" : "AUTHENTICATION",
+  "eventId" : "1761693563567-507",
+  "user" : "djole@gmail.com",
+  "role" : "PROFESSOR",
+  "result" : "FAILURE",
+  "message" : "Wrong password",
+  "ipAddress" : "0:0:0:0:0:0:0:1",
+  "userAgent" : "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36"
+}
+
+{
+  "timestamp" : "2025-10-28T23:19:35.351Z",
+  "eventType" : "LOGIN_SUCCESS",
+  "category" : "AUTHENTICATION",
+  "eventId" : "1761693575351-9",
+  "user" : "djole@gmail.com",
+  "role" : "PROFESSOR",
+  "result" : "SUCCESS",
+  "message" : "User logged in successfully",
+  "ipAddress" : "0:0:0:0:0:0:0:1",
+  "userAgent" : "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36"
+}
+
+{
+  "timestamp" : "2025-10-28T23:20:25.420Z",
+  "eventType" : "LOGIN_SUCCESS",
+  "category" : "AUTHENTICATION",
+  "eventId" : "1761693625420-574",
+  "user" : "nikola.milivojevic.555@gmail.com",
+  "role" : "STUDENT",
+  "result" : "SUCCESS",
+  "message" : "User logged in successfully",
+  "ipAddress" : "0:0:0:0:0:0:0:1",
+  "userAgent" : "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36"
+}
+
+{
+  "timestamp" : "2025-10-28T23:43:15.003Z",
+  "eventType" : "LOGIN_SUCCESS",
+  "category" : "AUTHENTICATION",
+  "eventId" : "1761694995003-846",
+  "user" : "nikola.milivojevic.555@gmail.com",
+  "role" : "STUDENT",
+  "result" : "SUCCESS",
+  "message" : "User logged in successfully",
+  "ipAddress" : "0:0:0:0:0:0:0:1",
+  "userAgent" : "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36"
+}

@@ -18,7 +18,7 @@ public class StudentProfileDTO {
     public double averageGrade;
     public StudyType studyType;
     public DormitoryStatus dormitoryStatus;
-    public List<Subject> passedSubjects;
+    public List<PassedSubjectWithGradeDTO> passedSubjects;
 
     public StudentProfileDTO() {}
 
@@ -34,7 +34,7 @@ public class StudentProfileDTO {
         this.dormitoryStatus = dormitoryStatus;
     }
 
-    public StudentProfileDTO(String name,String surname,String index,String email, int year,boolean budget, double averageGrade,StudyType studyType, DormitoryStatus dormitoryStatus, List<Subject> passedSubjects) {
+    public StudentProfileDTO(String name,String surname,String index,String email, int year,boolean budget, double averageGrade,StudyType studyType, DormitoryStatus dormitoryStatus, List<PassedSubjectWithGradeDTO> passedSubjects) {
         this.name = name;
         this.surname = surname;
         this.index = index;

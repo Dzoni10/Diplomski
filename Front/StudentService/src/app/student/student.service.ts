@@ -9,6 +9,7 @@ import { StudentFaculty } from './model/StudentFaculty.model';
 import { StudentMeal } from './model/StudentMeal.model';
 import { StudentDeposit } from './model/StudentDeposit.mode';
 import { StudentDormitoryPayment } from './model/StudentDormitoryPayment.model';
+import { PassedExam } from '../subject/model/PassedExam.model';
 @Injectable({
   providedIn: 'root'
 })
@@ -74,6 +75,10 @@ resetDormPayments(): Observable<void> {
 
 payDorm(change: StudentDormitoryPayment): Observable<any> {
     return this.http.put(`${this.apiUrl}/pay-dorm`,change, {headers:this.getAuthHeaders()});
+}
+
+getPassedExams(studentId: number): Observable<PassedExam[]> {
+    return this.http.get<PassedExam[]>(`${this.apiUrl}/passed-exams/${studentId}`,{headers:this.getAuthHeaders()});
 }
 
 

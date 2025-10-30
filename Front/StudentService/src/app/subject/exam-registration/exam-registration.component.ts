@@ -50,11 +50,13 @@ export class ExamRegistrationComponent implements OnInit {
     if(!studentId) return;
     const ids = this.availableSubjects.filter(s => s.selected).map(s => s.subjectId);
     if (ids.length === 0) return;
-    this.subjectService.registerExams(studentId, ids).subscribe(() => {
+    this.subjectService.registerExams(studentId, ids).subscribe({next:() => {
       this.moveSubjects(this.availableSubjects, this.registeredSubjects);
       this.loadStudent(studentId);
       this.loadSubjects(studentId);
-    });
+    },error: (err)=>{
+        this.matSnackBar.open("Nema dovoljno sredstava za placanje","Close",{duration:3000, horizontalPosition:'center'});
+    }});
   }
 
   unregisterExams() {

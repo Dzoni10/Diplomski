@@ -7,7 +7,7 @@ public class ValidationConstants {
     public static final String EMAIL_PATTERN = "^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,}$";
 
     // Index pattern
-    public static final String INDEX_PATTERN = "^(?:[A-Z]{2}|[A-Z][0-9])-(?:[1-9]|[1-9][0-9]|1[0-9]{2}|2[0-3][0-9]|240)-20(1[1-9]|[2-9][0-9])$\n";
+    public static final String INDEX_PATTERN = "^[A-Z]{2}-([1-9]|[1-9][0-9]|[1-9][0-9]{2})-20(1[1-9]|[2-9][0-9])$";
 
 
     // Size limits

@@ -5,10 +5,7 @@ import com.example.studentservice.domain.StudyType;
 import com.example.studentservice.domain.User;
 import com.example.studentservice.validation.StrongPassword;
 import com.example.studentservice.validation.ValidationConstants;
-import jakarta.validation.constraints.Email;
-import jakarta.validation.constraints.NotBlank;
-import jakarta.validation.constraints.Pattern;
-import jakarta.validation.constraints.Size;
+import jakarta.validation.constraints.*;
 
 
 public class UserDTO {
@@ -55,7 +52,7 @@ public class UserDTO {
             message = ValidationConstants.INDEX_INVALID_MSG)
     public String index;
 
-    @NotBlank(message = "Study type is required")
+    @NotNull(message = "Study type is required")
     public StudyType studyType;
 
     public UserDTO(){}

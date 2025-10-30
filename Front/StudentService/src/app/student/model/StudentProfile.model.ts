@@ -1,3 +1,4 @@
+import { PassedSubjectWithGrade } from "src/app/subject/model/PassedSubjectWithGrade.model";
 import { SubjectFaculty } from "src/app/subject/model/SubjectFaculty.model";
 
 export interface StudentProfile{
@@ -11,5 +12,5 @@ export interface StudentProfile{
   averageGrade: number;
   studyType:string;
   dormitoryStatus: string;
-  passedSubjects: SubjectFaculty[];
+  passedSubjects: PassedSubjectWithGrade[];
 }

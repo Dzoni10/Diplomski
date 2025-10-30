@@ -12,7 +12,7 @@
         <p><strong>Status doma:</strong> {{ convertDormitoryStatus(studentProfile.dormitoryStatus) }}</p>
         <p><strong>Budžet:</strong> {{ studentProfile.budget ? 'DA' : 'NE' }}</p>
         <p><strong>Prosek:</strong> {{ studentProfile.averageGrade | number: '1.2-2' }}</p>
-        <p><strong>Ukupno ESPB:</strong> {{ calculateEspb(studentProfile.passedSubjects) }}</p>
+        <p><strong>Ukupno ESPB:</strong> {{ totalEspb }}</p>
         <p><strong>Vrsta studija:</strong> {{ convertStudyType(studentProfile.studyType) }}</p>
       </div>
     </mat-card-content>
@@ -26,7 +26,7 @@
       <table mat-table [dataSource]="studentProfile.passedSubjects" class="mat-elevation-z8">
 
         <!-- Naziv predmeta -->
-        <ng-container matColumnDef="name">
+        <ng-container matColumnDef="subjectName">
           <th mat-header-cell *matHeaderCellDef> Naziv </th>
           <td mat-cell *matCellDef="let subject"> {{subject.name}} </td>
         </ng-container>
@@ -35,18 +35,31 @@
         <ng-container matColumnDef="espb">
           <th mat-header-cell *matHeaderCellDef> ESPB </th>
           <td mat-cell *matCellDef="let subject"> {{subject.espb}} </td>
+        </ng-container> 
+       
+        <ng-container matColumnDef="year">
+          <th mat-header-cell *matHeaderCellDef> Godina </th>
+          <td mat-cell *matCellDef="let subject"> {{subject.year}} </td>
         </ng-container>
 
-        <!-- Semestar -->
-        <ng-container matColumnDef="semester">
+         <ng-container matColumnDef="semester">
           <th mat-header-cell *matHeaderCellDef> Semestar </th>
           <td mat-cell *matCellDef="let subject"> {{subject.semester}} </td>
         </ng-container>
-
-        <!-- Smer/oblast -->
-        <ng-container matColumnDef="field">
-          <th mat-header-cell *matHeaderCellDef> Oblast </th>
-          <td mat-cell *matCellDef="let subject"> {{subject.field}} </td>
+     
+        <ng-container matColumnDef="points">
+          <th mat-header-cell *matHeaderCellDef> Poeni </th>
+          <td mat-cell *matCellDef="let subject"> {{subject.points}} </td>
+        </ng-container>
+        
+        <ng-container matColumnDef="grade">
+          <th mat-header-cell *matHeaderCellDef> Ocena </th>
+          <td mat-cell *matCellDef="let subject"> {{subject.grade}} </td>
+        </ng-container>
+        
+        <ng-container matColumnDef="professorName">
+          <th mat-header-cell *matHeaderCellDef> Profesor </th>
+          <td mat-cell *matCellDef="let subject"> {{subject.professorName}} </td>
         </ng-container>
 
         <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
